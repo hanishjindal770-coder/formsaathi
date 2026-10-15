@@ -3,7 +3,7 @@
 export type OutFormat = "jpeg" | "png" | "webp";
 export type Unit = "px" | "cm" | "in";
 export type Dims = { width: number; height: number };
-export type OpTag = "resized" | "cropped" | "compressed" | "converted" | "rotated" | "flipped";
+export type OpTag = "resized" | "cropped" | "compressed" | "converted" | "rotated" | "flipped" | "text" | "blurred" | "pixelated";
 
 export const FORMATS: OutFormat[] = ["jpeg", "png", "webp"];
 export const MIME: Record<OutFormat, "image/jpeg" | "image/png" | "image/webp"> = { jpeg: "image/jpeg", png: "image/png", webp: "image/webp" };

@@ -5,3 +5,4 @@ next-env.d.ts
 *.tsbuildinfo
 .env*.local
 public/pdf.worker.min.js
+public/ocr/

@@ -12,7 +12,7 @@
     "test:watch": "vitest",
     "validate:exams": "tsx scripts/validate-exams.ts",
     "icons": "node scripts/make-icons.mjs",
-    "postinstall": "node scripts/copy-pdf-worker.mjs"
+    "postinstall": "node scripts/copy-pdf-worker.mjs && node scripts/copy-ocr-assets.mjs"
   },
   "dependencies": {
     "@fontsource/noto-sans-devanagari": "^5.3.0",
@@ -21,6 +21,7 @@
     "pdfjs-dist": "^4.10.38",
     "react": "^19.3.1",
     "react-dom": "^19.3.1",
+    "tesseract.js": "^7.0.0",
     "zod": "^4.6.7"
   },
   "devDependencies": {

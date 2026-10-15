@@ -1,3 +1,4 @@
+import { ocrEn } from "./parts/ocr";
 import { infoEn } from "./parts/info";
 import { bulkEn } from "./parts/bulk";
 import { studioEn } from "./parts/studio";
@@ -34,6 +35,24 @@ const en = {
     categories: { ssc: "SSC", railway: "Railway", upsc: "UPSC", banking: "Banking", state: "State", defence: "Defence", teaching: "Teaching", police: "Police", other: "Other" },
   },
   tools: {
+    "add-text-to-image": {
+      name: "Add text to image",
+      desc: "Write text or a watermark on any photo, in Hindi or English.",
+      examTitle: "{exam} Add text to image",
+      examDesc: "Write text or a watermark on any photo, in Hindi or English.",
+    },
+    "blur-image": {
+      name: "Blur image",
+      desc: "Blur or pixelate faces, numbers or any part of a photo.",
+      examTitle: "{exam} Blur image",
+      examDesc: "Blur or pixelate faces, numbers or any part of a photo.",
+    },
+    "image-to-text": {
+      name: "Image to text (OCR)",
+      desc: "Copy Hindi or English text from a photo or screenshot.",
+      examTitle: "{exam} Image to text (OCR)",
+      examDesc: "Copy Hindi or English text from a photo or screenshot.",
+    },
     "resize-image": {
       name: "Resize image",
       desc: "Change the size of any photo in pixels, percent, cm or inches.",
@@ -304,6 +323,7 @@ const en = {
     note: "Transparent areas become white in JPG.",
   },
   studio: studioEn,
+  ocr: ocrEn,
   info: infoEn,
   bulk: bulkEn,
   typing: typingEn,

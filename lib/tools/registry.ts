@@ -14,6 +14,9 @@ export type ToolId =
   | "convert-image"
   | "rotate-flip-image"
   | "bulk-resize"
+  | "add-text-to-image"
+  | "blur-image"
+  | "image-to-text"
   | "photo-resize"
   | "signature-resize"
   | "thumb-resize"
@@ -56,6 +59,9 @@ export const TOOLS: ToolDef[] = [
   { id: "compress-image", group: "image", enabled: true, icon: "🗜️", generic: true, availableFor: () => false },
   { id: "convert-image", group: "image", enabled: true, icon: "🔄", generic: true, availableFor: () => false },
   { id: "rotate-flip-image", group: "image", enabled: true, icon: "🔃", generic: true, availableFor: () => false },
+  { id: "add-text-to-image", group: "image", enabled: true, icon: "🔤", generic: true, availableFor: () => false },
+  { id: "blur-image", group: "image", enabled: true, icon: "🌫️", generic: true, availableFor: () => false },
+  { id: "image-to-text", group: "image", enabled: true, icon: "📝", generic: true, availableFor: () => false },
   { id: "bulk-resize", group: "image", enabled: true, icon: "📦", generic: true, availableFor: () => false },
   { id: "photo-resize", group: "exam", enabled: true, icon: "🖼️", doc: "photo", generic: true, availableFor: (e) => !!e.photo },
   { id: "signature-resize", group: "exam", enabled: true, icon: "✍️", doc: "signature", generic: true, availableFor: (e) => !!e.signature },

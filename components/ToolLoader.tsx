@@ -16,6 +16,7 @@ const COMPONENTS = {
   PassportSheet: dynamic(() => import("./tools/PassportSheet")),
   ImageConvert: dynamic(() => import("./tools/ImageConvert")),
   ImageStudio: dynamic(() => import("./tools/ImageStudio")),
+  ImageToText: dynamic(() => import("./tools/ImageToText")),
   BulkResize: dynamic(() => import("./tools/BulkResize")),
   TypingTest: dynamic(() => import("./tools/TypingTest")),
   AnswerKey: dynamic(() => import("./tools/AnswerKey")),

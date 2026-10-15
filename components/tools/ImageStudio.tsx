@@ -8,10 +8,14 @@ import { FORMAT_LABEL, formatForInput, historyOverflow, looksLikeHeic, outputNam
 import { kb, useObjectUrl } from "./shared";
 import CropPanel from "./studio/CropPanel";
 import { CompressPanel, ConvertPanel, RotatePanel, type RotateAction } from "./studio/OutputPanels";
+import { strengthPx } from "@/lib/image/annotate";
+import { drawBlur, drawText, editCopy, type BlurOpts, type TextOpts } from "./studio/annotateDraw";
+import BlurPanel from "./studio/BlurPanel";
+import TextPanel from "./studio/TextPanel";
 import { renderStep, type OutSettings, type Rendered, type Step } from "./studio/render";
 import ResizePanel from "./studio/ResizePanel";
 
-export type StudioTab = "resize" | "crop" | "compress" | "convert" | "rotate";
+export type StudioTab = "resize" | "crop" | "compress" | "convert" | "rotate" | "text" | "blur";
 export type StudioPreset = { widthPx?: number; heightPx?: number; maxKB?: number; to?: "jpeg" | "png" | "webp" };
 
 type Props = { lang: Lang; t: typeof studioEn; initialTab?: StudioTab; preset?: StudioPreset };
@@ -24,6 +28,8 @@ const TABS: { id: StudioTab; icon: string }[] = [
   { id: "compress", icon: "🗜️" },
   { id: "convert", icon: "🔄" },
   { id: "rotate", icon: "⟳" },
+  { id: "text", icon: "🔤" },
+  { id: "blur", icon: "💧" },
 ];
 const ACCEPT = "image/*,.heic,.heif";
 const HISTORY_MAX = 10;
@@ -147,6 +153,11 @@ export default function ImageStudio({ lang, t, initialTab = "resize", preset }: 
   const rotate = (a: RotateAction) =>
     applyCanvas((s) => (a === "h" || a === "v" ? flip(s, a) : rotateBy(s, a === "left" ? 270 : a === "right" ? 90 : 180)), a === "h" || a === "v" ? "flipped" : "rotated");
 
+  const addText = (o: TextOpts) => applyCanvas((s) => editCopy(s, (c) => drawText(c, o)), "text");
+
+  const blur = (o: BlurOpts) =>
+    applyCanvas((s) => editCopy(s, (c) => drawBlur(c, o.mode, o.rect, strengthPx(o.level, s))), o.mode === "blur" ? "blurred" : "pixelated");
+
   const setOut = (out: OutSettings) => {
     if (!step) return;
     const op: OpTag = out.format !== step.out.format ? "converted" : "compressed";
@@ -217,7 +228,8 @@ export default function ImageStudio({ lang, t, initialTab = "resize", preset }: 
         </label>
       </div>
 
-      <div role="tablist" className="grid grid-cols-5 gap-1 rounded-xl border border-line p-1">
+      {/* 7 tabs don't fit one row on a 360 px phone without truncating Hindi labels, so: 4 + 3. */}
+      <div role="tablist" className="grid grid-cols-4 gap-1 sm:grid-cols-7 rounded-xl border border-line p-1">
         {TABS.map((x) => (
           <button
             key={x.id}
@@ -235,6 +247,15 @@ export default function ImageStudio({ lang, t, initialTab = "resize", preset }: 
 
       {tab === "crop" && url ? (
         <CropPanel t={t} src={url} current={currentDims} onApply={crop} />
+      ) : tab === "text" || tab === "blur" ? (
+        <div role="tabpanel" className="relative">
+          {tab === "text" ? <TextPanel t={t} src={step.src} onApply={addText} /> : <BlurPanel t={t} src={step.src} onApply={blur} />}
+          {busy && (
+            <div className="absolute inset-0 flex items-start justify-center rounded-xl bg-black/30 pt-16 text-sm font-semibold text-white" aria-live="polite">
+              ⏳ {t.working}
+            </div>
+          )}
+        </div>
       ) : (
         <>
           <div

@@ -7,12 +7,14 @@ import { genericToolPath } from "@/lib/routes";
 import PrivacyNote from "./PrivacyNote";
 import ToolLoader, { type ToolComponent } from "./ToolLoader";
 
-const STUDIO_TABS: Partial<Record<EnabledToolId, "resize" | "crop" | "compress" | "convert" | "rotate">> = {
+const STUDIO_TABS: Partial<Record<EnabledToolId, "resize" | "crop" | "compress" | "convert" | "rotate" | "text" | "blur">> = {
   "resize-image": "resize",
   "crop-image": "crop",
   "compress-image": "compress",
   "convert-image": "convert",
   "rotate-flip-image": "rotate",
+  "add-text-to-image": "text",
+  "blur-image": "blur",
 };
 
 /**
@@ -35,6 +37,7 @@ export default function ToolSlot({ tool, lang, exam, preset }: { tool: EnabledTo
   else if (tool === "pdf-merge") node = ["PdfMerge", { t: d.pdf }];
   else if (tool === "passport-photo-sheet") node = ["PassportSheet", { t: d.sheet, tool: d.tool }];
   else if (tool in STUDIO_TABS) node = ["ImageStudio", { lang, t: d.studio, initialTab: STUDIO_TABS[tool], preset }];
+  else if (tool === "image-to-text") node = ["ImageToText", { lang, t: d.ocr }];
   else if (tool === "bulk-resize") node = ["BulkResize", { lang, t: d.bulk }];
   else if (tool === "image-convert") node = ["ImageConvert", { t: d.convert, preset: preset?.to === "webp" ? undefined : (preset as { to?: "jpeg" | "png" }) }];
   else if (tool === "typing-test") {

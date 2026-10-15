@@ -1,3 +1,4 @@
+import { ocrHi } from "./parts/ocr";
 import { infoHi } from "./parts/info";
 import { bulkHi } from "./parts/bulk";
 import { studioHi } from "./parts/studio";
@@ -36,6 +37,24 @@ const hi: Dict = {
     categories: { ssc: "SSC", railway: "रेलवे", upsc: "UPSC", banking: "बैंकिंग", state: "राज्य", defence: "रक्षा", teaching: "शिक्षक", police: "पुलिस", other: "अन्य" },
   },
   tools: {
+    "add-text-to-image": {
+      name: "फोटो पर टेक्स्ट लिखें",
+      desc: "किसी भी फोटो पर हिंदी या अंग्रेज़ी में टेक्स्ट या वॉटरमार्क लिखें।",
+      examTitle: "{exam} फोटो पर टेक्स्ट लिखें",
+      examDesc: "किसी भी फोटो पर हिंदी या अंग्रेज़ी में टेक्स्ट या वॉटरमार्क लिखें।",
+    },
+    "blur-image": {
+      name: "फोटो ब्लर करें",
+      desc: "फोटो में चेहरा, नंबर या कोई भी हिस्सा ब्लर या पिक्सलेट करें।",
+      examTitle: "{exam} फोटो ब्लर करें",
+      examDesc: "फोटो में चेहरा, नंबर या कोई भी हिस्सा ब्लर या पिक्सलेट करें।",
+    },
+    "image-to-text": {
+      name: "फोटो से टेक्स्ट (OCR)",
+      desc: "फोटो या स्क्रीनशॉट से हिंदी या अंग्रेज़ी टेक्स्ट कॉपी करें।",
+      examTitle: "{exam} फोटो से टेक्स्ट (OCR)",
+      examDesc: "फोटो या स्क्रीनशॉट से हिंदी या अंग्रेज़ी टेक्स्ट कॉपी करें।",
+    },
     "resize-image": {
       name: "इमेज रिसाइज़ करें",
       desc: "किसी भी फोटो का साइज़ पिक्सल, प्रतिशत, cm या इंच में बदलें।",
@@ -306,6 +325,7 @@ const hi: Dict = {
     note: "JPG में पारदर्शी हिस्सा सफ़ेद हो जाता है।",
   },
   studio: studioHi,
+  ocr: ocrHi,
   info: infoHi,
   bulk: bulkHi,
   typing: typingHi,

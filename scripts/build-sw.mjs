@@ -71,7 +71,7 @@ self.addEventListener("fetch", (event) => {
   if (url.origin !== self.location.origin) return;
 
   // Hashed build assets, fonts, icons: cache first, they never change under the same URL.
-  if (url.pathname.startsWith(BASE + "/_next/static/") || url.pathname.startsWith(BASE + "/icons/")) {
+  if (url.pathname.startsWith(BASE + "/_next/static/") || url.pathname.startsWith(BASE + "/icons/") || url.pathname.startsWith(BASE + "/ocr/")) {
     event.respondWith(
       caches.match(req).then((hit) => hit || fetch(req).then((res) => {
         if (res.ok) { const copy = res.clone(); caches.open(RUNTIME).then((c) => c.put(req, copy)); }
