@@ -1,0 +1,91 @@
+{
+  "slug": "ibps-clerk",
+  "name": {
+    "en": "IBPS Clerk",
+    "hi": "आईबीपीएस क्लर्क"
+  },
+  "body": "IBPS",
+  "category": "banking",
+  "officialSite": "https://www.ibps.in",
+  "photo": {
+    "format": [
+      "jpg",
+      "jpeg"
+    ],
+    "minKB": 20,
+    "maxKB": 50,
+    "widthPx": 200,
+    "heightPx": 230,
+    "background": "light",
+    "notes": {
+      "en": "Recent passport-style colour photo on a light (preferably white) background, looking straight at the camera.",
+      "hi": "हाल की पासपोर्ट साइज़ रंगीन फोटो, हल्की (बेहतर हो सफ़ेद) पृष्ठभूमि, कैमरे की ओर सीधे देखते हुए।"
+    }
+  },
+  "signature": {
+    "format": [
+      "jpg",
+      "jpeg"
+    ],
+    "minKB": 10,
+    "maxKB": 20,
+    "widthPx": 140,
+    "heightPx": 60,
+    "background": "white",
+    "notes": {
+      "en": "Sign on white paper with a black ink pen. Signatures in CAPITAL letters are not accepted.",
+      "hi": "सफ़ेद कागज़ पर काली स्याही के पेन से हस्ताक्षर करें। कैपिटल अक्षरों में हस्ताक्षर स्वीकार नहीं होते।"
+    }
+  },
+  "thumb": {
+    "format": [
+      "jpg",
+      "jpeg"
+    ],
+    "minKB": 20,
+    "maxKB": 50,
+    "widthPx": 240,
+    "heightPx": 240,
+    "background": "white",
+    "notes": {
+      "en": "Left thumb impression on white paper with black or blue ink.",
+      "hi": "सफ़ेद कागज़ पर काली या नीली स्याही से बाएँ अंगूठे का निशान।"
+    }
+  },
+  "declaration": {
+    "format": [
+      "jpg",
+      "jpeg"
+    ],
+    "minKB": 50,
+    "maxKB": 100,
+    "widthPx": 800,
+    "heightPx": 400,
+    "background": "white",
+    "notes": {
+      "en": "Handwritten declaration in English, in your own handwriting, on white paper with black ink.",
+      "hi": "अंग्रेज़ी में अपनी लिखावट में घोषणा, सफ़ेद कागज़ पर काली स्याही से।"
+    }
+  },
+  "age": {
+    "min": 20,
+    "max": 28,
+    "cutoffDate": "2025-08-01",
+    "relaxation": {
+      "OBC": 3,
+      "SC": 5,
+      "ST": 5,
+      "EWS": 0,
+      "PwD": 10,
+      "ExSM": 5
+    }
+  },
+  "sourceUrl": "https://www.ibps.in",
+  "lastVerified": "2026-10-15",
+  "verified": false,
+  "todo": [
+    "Every value in this file is a template from commonly published figures and has NOT been checked against the official notification.",
+    "Confirm cutoff date",
+    "Replace sourceUrl with the notification PDF"
+  ]
+}

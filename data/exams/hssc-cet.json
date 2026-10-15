@@ -1,0 +1,37 @@
+{
+  "slug": "hssc-cet",
+  "name": {
+    "en": "Haryana CET (HSSC)",
+    "hi": "हरियाणा सीईटी (एचएसएससी)"
+  },
+  "body": "HSSC",
+  "state": "Haryana",
+  "category": "state",
+  "officialSite": "https://hssc.gov.in",
+  "age": {
+    "min": 18,
+    "max": 42,
+    "cutoffDate": "2025-01-01",
+    "relaxation": {
+      "OBC": 5,
+      "SC": 5,
+      "ST": 0,
+      "EWS": 0,
+      "PwD": 10,
+      "ExSM": 0
+    },
+    "notes": {
+      "en": "Haryana: relaxation for SC/BC of Haryana domicile only.",
+      "hi": "हरियाणा: छूट केवल हरियाणा के मूल निवासी SC/BC के लिए।"
+    }
+  },
+  "sourceUrl": "https://hssc.gov.in",
+  "lastVerified": "2026-10-15",
+  "verified": false,
+  "todo": [
+    "Every value in this file is a template from commonly published figures and has NOT been checked against the official notification.",
+    "Confirm age limits and relaxations",
+    "Add photo and signature specs",
+    "Replace sourceUrl with the advertisement PDF"
+  ]
+}

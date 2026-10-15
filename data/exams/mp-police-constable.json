@@ -1,0 +1,37 @@
+{
+  "slug": "mp-police-constable",
+  "name": {
+    "en": "MP Police Constable (MPESB)",
+    "hi": "एमपी पुलिस आरक्षक (एमपीईएसबी)"
+  },
+  "body": "MPESB",
+  "state": "Madhya Pradesh",
+  "category": "police",
+  "officialSite": "https://esb.mp.gov.in",
+  "age": {
+    "min": 18,
+    "max": 33,
+    "cutoffDate": "2026-01-01",
+    "relaxation": {
+      "OBC": 5,
+      "SC": 5,
+      "ST": 5,
+      "EWS": 5,
+      "PwD": 0,
+      "ExSM": 0
+    },
+    "notes": {
+      "en": "Limits differ for men and women and for MP domicile candidates.",
+      "hi": "पुरुष, महिला और मध्य प्रदेश के मूल निवासियों के लिए सीमा अलग है।"
+    }
+  },
+  "sourceUrl": "https://esb.mp.gov.in",
+  "lastVerified": "2026-10-15",
+  "verified": false,
+  "todo": [
+    "Every value in this file is a template from commonly published figures and has NOT been checked against the official notification.",
+    "Confirm all age values; PwD/ExSM set to 0 as unknown",
+    "Add photo and signature specs",
+    "Replace sourceUrl with the rule book PDF"
+  ]
+}

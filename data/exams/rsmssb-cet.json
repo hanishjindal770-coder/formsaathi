@@ -1,0 +1,38 @@
+{
+  "slug": "rsmssb-cet",
+  "name": {
+    "en": "Rajasthan CET (RSMSSB)",
+    "hi": "राजस्थान सीईटी (आरएसएमएसएसबी)"
+  },
+  "body": "RSMSSB",
+  "state": "Rajasthan",
+  "category": "state",
+  "officialSite": "https://rsmssb.rajasthan.gov.in",
+  "age": {
+    "min": 18,
+    "max": 40,
+    "cutoffDate": "2026-01-01",
+    "relaxation": {
+      "OBC": 5,
+      "SC": 5,
+      "ST": 5,
+      "EWS": 5,
+      "PwD": 10,
+      "ExSM": 0
+    },
+    "notes": {
+      "en": "Rajasthan relaxations differ for men and women and apply to Rajasthan domicile only.",
+      "hi": "राजस्थान में छूट पुरुष और महिला के लिए अलग है और केवल राजस्थान के मूल निवासियों के लिए है।"
+    }
+  },
+  "sourceUrl": "https://rsmssb.rajasthan.gov.in",
+  "lastVerified": "2026-10-15",
+  "verified": false,
+  "todo": [
+    "Every value in this file is a template from commonly published figures and has NOT been checked against the official notification.",
+    "Model gender-based relaxation",
+    "Add photo and signature specs (SSO profile rules)",
+    "Confirm cutoff date",
+    "Replace sourceUrl with the advertisement PDF"
+  ]
+}

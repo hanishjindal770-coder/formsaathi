@@ -1,0 +1,61 @@
+{
+  "slug": "ssc-chsl",
+  "name": {
+    "en": "SSC CHSL",
+    "hi": "एसएससी सीएचएसएल"
+  },
+  "body": "SSC",
+  "category": "ssc",
+  "officialSite": "https://ssc.gov.in",
+  "photo": {
+    "format": [
+      "jpg",
+      "jpeg"
+    ],
+    "minKB": 20,
+    "maxKB": 50,
+    "widthCm": 3.5,
+    "heightCm": 4.5,
+    "background": "white",
+    "notes": {
+      "en": "Recent colour photo, without cap or spectacles, face clearly visible. Recent SSC forms may capture the photo live through the app or webcam; check the notice.",
+      "hi": "हाल की रंगीन फोटो, बिना टोपी और चश्मे के, चेहरा साफ़ दिखे। नए SSC फॉर्म में फोटो ऐप या वेबकैम से लाइव ली जा सकती है; नोटिस देखें।"
+    }
+  },
+  "signature": {
+    "format": [
+      "jpg",
+      "jpeg"
+    ],
+    "minKB": 10,
+    "maxKB": 20,
+    "widthCm": 6.0,
+    "heightCm": 2.0,
+    "background": "white",
+    "notes": {
+      "en": "Sign on white paper with a black or blue pen. Signature in capital letters is not accepted.",
+      "hi": "सफ़ेद कागज़ पर काले या नीले पेन से हस्ताक्षर करें। कैपिटल अक्षरों में हस्ताक्षर मान्य नहीं है।"
+    }
+  },
+  "age": {
+    "min": 18,
+    "max": 27,
+    "cutoffDate": "2025-01-01",
+    "relaxation": {
+      "OBC": 3,
+      "SC": 5,
+      "ST": 5,
+      "EWS": 0,
+      "PwD": 10,
+      "ExSM": 3
+    }
+  },
+  "sourceUrl": "https://ssc.gov.in",
+  "lastVerified": "2026-10-15",
+  "verified": false,
+  "todo": [
+    "Every value in this file is a template from commonly published figures and has NOT been checked against the official notification.",
+    "Confirm cutoff date for the current cycle",
+    "Replace sourceUrl with the notification PDF"
+  ]
+}

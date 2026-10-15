@@ -1,0 +1,48 @@
+{
+  "slug": "rrb-group-d",
+  "name": {
+    "en": "RRB Group D",
+    "hi": "आरआरबी ग्रुप डी"
+  },
+  "body": "RRB",
+  "category": "railway",
+  "officialSite": "https://www.rrbcdg.gov.in",
+  "photo": {
+    "format": [
+      "jpg",
+      "jpeg"
+    ],
+    "minKB": 30,
+    "maxKB": 70,
+    "widthCm": 3.5,
+    "heightCm": 4.5,
+    "background": "light",
+    "notes": {
+      "en": "Recent colour photo with a light background. The same photo is usually checked at the exam centre, so keep copies.",
+      "hi": "हल्की पृष्ठभूमि वाली हाल की रंगीन फोटो। यही फोटो परीक्षा केंद्र पर भी मिलाई जाती है, इसलिए प्रतियाँ रखें।"
+    }
+  },
+  "age": {
+    "min": 18,
+    "max": 36,
+    "cutoffDate": "2025-01-01",
+    "relaxation": {
+      "OBC": 3,
+      "SC": 5,
+      "ST": 5,
+      "EWS": 0,
+      "PwD": 10,
+      "ExSM": 3
+    }
+  },
+  "sourceUrl": "https://www.rrbcdg.gov.in",
+  "lastVerified": "2026-10-15",
+  "verified": false,
+  "todo": [
+    "Every value in this file is a template from commonly published figures and has NOT been checked against the official notification.",
+    "Add signature spec from the CEN notice",
+    "Confirm photo KB range",
+    "Confirm age limit and cutoff date",
+    "Replace sourceUrl with the CEN PDF"
+  ]
+}

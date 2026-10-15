@@ -1,0 +1,37 @@
+{
+  "slug": "upsssc-pet",
+  "name": {
+    "en": "UPSSSC PET",
+    "hi": "यूपीएसएसएससी पीईटी"
+  },
+  "body": "UPSSSC",
+  "state": "Uttar Pradesh",
+  "category": "state",
+  "officialSite": "https://upsssc.gov.in",
+  "age": {
+    "min": 18,
+    "max": 40,
+    "cutoffDate": "2025-07-01",
+    "relaxation": {
+      "OBC": 5,
+      "SC": 5,
+      "ST": 5,
+      "EWS": 0,
+      "PwD": 15,
+      "ExSM": 3
+    },
+    "notes": {
+      "en": "Relaxation applies only to Uttar Pradesh domicile candidates.",
+      "hi": "छूट केवल उत्तर प्रदेश के मूल निवासियों के लिए है।"
+    }
+  },
+  "sourceUrl": "https://upsssc.gov.in",
+  "lastVerified": "2026-10-15",
+  "verified": false,
+  "todo": [
+    "Every value in this file is a template from commonly published figures and has NOT been checked against the official notification.",
+    "Add photo and signature specs from the advertisement",
+    "Confirm cutoff date and ExSM relaxation",
+    "Replace sourceUrl with the advertisement PDF"
+  ]
+}

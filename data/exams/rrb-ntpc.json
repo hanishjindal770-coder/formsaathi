@@ -1,0 +1,52 @@
+{
+  "slug": "rrb-ntpc",
+  "name": {
+    "en": "RRB NTPC",
+    "hi": "आरआरबी एनटीपीसी"
+  },
+  "body": "RRB",
+  "category": "railway",
+  "officialSite": "https://www.rrbcdg.gov.in",
+  "photo": {
+    "format": [
+      "jpg",
+      "jpeg"
+    ],
+    "minKB": 30,
+    "maxKB": 70,
+    "widthCm": 3.5,
+    "heightCm": 4.5,
+    "background": "light",
+    "notes": {
+      "en": "Recent colour photo with a light background. The same photo is usually checked at the exam centre, so keep copies.",
+      "hi": "हल्की पृष्ठभूमि वाली हाल की रंगीन फोटो। यही फोटो परीक्षा केंद्र पर भी मिलाई जाती है, इसलिए प्रतियाँ रखें।"
+    }
+  },
+  "age": {
+    "min": 18,
+    "max": 36,
+    "cutoffDate": "2026-01-01",
+    "relaxation": {
+      "OBC": 3,
+      "SC": 5,
+      "ST": 5,
+      "EWS": 0,
+      "PwD": 10,
+      "ExSM": 3
+    },
+    "notes": {
+      "en": "Graduate-level posts. Undergraduate-level posts have a lower upper limit (usually 33).",
+      "hi": "स्नातक स्तर के पद। इंटर स्तर के पदों की अधिकतम आयु कम होती है (आमतौर पर 33)।"
+    }
+  },
+  "sourceUrl": "https://www.rrbcdg.gov.in",
+  "lastVerified": "2026-10-15",
+  "verified": false,
+  "todo": [
+    "Every value in this file is a template from commonly published figures and has NOT been checked against the official notification.",
+    "Add signature spec from the CEN notice",
+    "Confirm photo KB range and pixel size",
+    "Confirm cutoff date",
+    "Replace sourceUrl with the CEN PDF"
+  ]
+}
