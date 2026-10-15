@@ -41,6 +41,14 @@
       "hi": "GD 2026: 01-01-2026 को 18–23 (जन्म 02-01-2003 से 01-01-2008)। ये पद PwBD के लिए नहीं हैं। भूतपूर्व सैनिक: सैन्य सेवा घटाकर 3 वर्ष। 1984 दंगा पीड़ितों के बच्चों/आश्रितों को अतिरिक्त छूट (UR/EWS 5, OBC 8, SC/ST 10)।"
     }
   },
+  "marking": {
+    "correct": 2,
+    "wrong": 0.25,
+    "notes": {
+      "en": "2 marks per question, −0.25 per wrong answer.",
+      "hi": "हर प्रश्न 2 अंक, हर गलत उत्तर पर −0.25।"
+    }
+  },
   "sourceUrl": "https://ssc.gov.in/api/attachment/uploads/masterData/NoticeBoards/notice_01122025.pdf",
   "lastVerified": "2026-10-15",
   "verified": true

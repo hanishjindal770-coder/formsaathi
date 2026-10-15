@@ -18,11 +18,13 @@ export type ToolId =
   | "pdf-merge"
   | "passport-photo-sheet"
   | "image-convert"
-  // Phase 2:
-  | "answer-key"
   | "typing-test"
+  | "answer-key"
   | "my-forms"
-  | "countdown";
+  | "countdown"
+  | "resume-maker"
+  | "biodata-maker"
+  | "letter-maker";
 
 export type ToolDef = {
   id: ToolId;
@@ -47,14 +49,17 @@ export const TOOLS: ToolDef[] = [
   { id: "pdf-merge", enabled: true, icon: "📚", generic: true, availableFor: () => false },
   { id: "passport-photo-sheet", enabled: true, icon: "🖨️", generic: true, availableFor: () => false },
   { id: "image-convert", enabled: true, icon: "🔄", generic: true, availableFor: () => false },
-  { id: "answer-key", enabled: false, icon: "✅", generic: false, availableFor: () => false },
-  { id: "typing-test", enabled: false, icon: "⌨️", generic: true, availableFor: (e) => !!e.typing },
-  { id: "my-forms", enabled: false, icon: "🗂️", generic: true, availableFor: () => false },
-  { id: "countdown", enabled: false, icon: "⏳", generic: false, availableFor: () => false },
+  { id: "typing-test", enabled: true, icon: "⌨️", generic: true, availableFor: (e) => !!e.typing },
+  { id: "answer-key", enabled: true, icon: "✅", generic: true, availableFor: (e) => !!e.marking },
+  { id: "my-forms", enabled: true, icon: "🗂️", generic: true, availableFor: () => false },
+  { id: "countdown", enabled: true, icon: "⏳", generic: true, availableFor: () => false },
+  { id: "resume-maker", enabled: true, icon: "📃", generic: true, availableFor: () => false },
+  { id: "biodata-maker", enabled: true, icon: "💍", generic: true, availableFor: () => false },
+  { id: "letter-maker", enabled: true, icon: "✉️", generic: true, availableFor: () => false },
 ];
 
-/** Tools that are live on the site. */
-export type EnabledToolId = Exclude<ToolId, "answer-key" | "typing-test" | "my-forms" | "countdown">;
+/** Tools that are live on the site (all of them, now that Phase 2 is built). */
+export type EnabledToolId = ToolId;
 
 export const enabledTools = () => TOOLS.filter((t) => t.enabled) as (ToolDef & { id: EnabledToolId })[];
 export const getTool = (id: string) => enabledTools().find((t) => t.id === id);

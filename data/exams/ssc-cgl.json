@@ -41,6 +41,14 @@
       "hi": "CGL 2026: आयु सीमा पद के अनुसार है — 18–27 (ऑडिटर, अकाउंटेंट, डाक/छँटाई सहायक, कर सहायक…), 18–30 (इंस्पेक्टर, कुछ मंत्रालयों में ASO, AAO…), 20–30 (CSS/MEA/रेलवे में ASO, CBI में SI), 18–32 (JSO)। यह कैलकुलेटर 18–32 लेता है; अपना पद जाँचें। भूतपूर्व सैनिक: वास्तविक आयु से सैन्य सेवा घटाकर 3 वर्ष। PwBD को 10 वर्ष (OBC 13, SC/ST 15)। EWS को कोई छूट नहीं।"
     }
   },
+  "marking": {
+    "correct": 2,
+    "wrong": 0.5,
+    "notes": {
+      "en": "Tier-I: 2 marks per question, −0.50 per wrong answer. For Tier-II Paper-I use custom marking: +3, −1.",
+      "hi": "टियर-I: हर प्रश्न 2 अंक, हर गलत उत्तर पर −0.50। टियर-II पेपर-I के लिए कस्टम मार्किंग चुनें: +3, −1।"
+    }
+  },
   "sourceUrl": "https://ssc.gov.in/api/attachment/uploads/masterData/NoticeBoards/Notice_of_adv_cgl_2026.pdf",
   "lastVerified": "2026-10-15",
   "verified": true

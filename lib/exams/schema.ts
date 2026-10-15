@@ -96,6 +96,16 @@ export const ExamSpec = z
       })
       .strict()
       .optional(),
+    /** Extension: objective-test marking scheme, used by the answer-key calculator. `wrong` is the penalty size (0.5 means −0.5). */
+    marking: z
+      .object({
+        correct: z.number().positive(),
+        wrong: z.number().nonnegative(),
+        sections: z.array(z.object({ name: z.string().min(1), correct: z.number().positive().optional(), wrong: z.number().nonnegative().optional() }).strict()).optional(),
+        notes: Bilingual.optional(),
+      })
+      .strict()
+      .optional(),
     sourceUrl: z.url(),
     lastVerified: z.string().regex(/^\d{4}-\d{2}-\d{2}$/, "lastVerified must be YYYY-MM-DD"),
     verified: z.boolean(),

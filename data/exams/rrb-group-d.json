@@ -49,6 +49,14 @@
       "hi": "CEN 09/2025 (लेवल 1): 01-01-2026 को 18–33 (UR/EWS जन्म 02-01-1993 से 01-01-2008)। भूतपूर्व सैनिक: सेवा घटाकर 3 वर्ष (OBC-NCL 6, SC/ST 8)। PwBD: 10 (OBC-NCL 13, SC/ST 15)। EWS को UR जैसा माना जाता है।"
     }
   },
+  "marking": {
+    "correct": 1,
+    "wrong": 0.3333,
+    "notes": {
+      "en": "CEN 09/2025: 1 mark per question, −1/3 per wrong answer.",
+      "hi": "CEN 09/2025: हर प्रश्न 1 अंक, हर गलत उत्तर पर −1/3।"
+    }
+  },
   "sourceUrl": "https://www.rrbcdg.gov.in/uploads/2025/09-LVL1/092025-CEN.pdf",
   "lastVerified": "2026-10-15",
   "verified": false,

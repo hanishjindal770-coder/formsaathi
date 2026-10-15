@@ -41,6 +41,24 @@
       "hi": "MTS और हवलदार 2025 अधिसूचना से (जाँच के समय 2026 की अधिसूचना नहीं आई थी)। MTS: 18–25 (जन्म 02-08-2000 से 01-08-2007)। हवलदार और कुछ MTS पद: 18–27 (जन्म 02-08-1998 से 01-08-2007)। यह कैलकुलेटर 18–27 लेता है। भूतपूर्व सैनिक: वास्तविक आयु से सैन्य सेवा घटाकर 3 वर्ष। PwBD को 10 वर्ष (OBC 13, SC/ST 15)। EWS को कोई छूट नहीं।"
     }
   },
+  "marking": {
+    "correct": 3,
+    "wrong": 1,
+    "sections": [
+      {
+        "name": "Session-I",
+        "wrong": 0
+      },
+      {
+        "name": "Session I",
+        "wrong": 0
+      }
+    ],
+    "notes": {
+      "en": "3 marks per question. No negative marking in Session-I; −1 per wrong answer in Session-II.",
+      "hi": "हर प्रश्न 3 अंक। सेशन-I में नेगेटिव मार्किंग नहीं; सेशन-II में हर गलत उत्तर पर −1।"
+    }
+  },
   "sourceUrl": "https://ssc.gov.in/api/attachment/uploads/masterData/NoticeBoards/Notice_of_adv_mts_2025.pdf",
   "lastVerified": "2026-10-15",
   "verified": true

@@ -87,6 +87,14 @@
       "hi": "CRP CSA-XVI: 01-08-2026 को 20–28 (जन्म 02-08-1998 से 01-08-2006)। PwBD 10। भूतपूर्व सैनिक: रक्षा सेवा + 3 वर्ष, अधिकतम 50।"
     }
   },
+  "marking": {
+    "correct": 1,
+    "wrong": 0.25,
+    "notes": {
+      "en": "Prelims: 100 questions, 100 marks; 0.25 of the question's marks deducted per wrong answer.",
+      "hi": "प्रीलिम्स: 100 प्रश्न, 100 अंक; हर गलत उत्तर पर उस प्रश्न के 0.25 अंक कटेंगे।"
+    }
+  },
   "sourceUrl": "https://www.ibps.in/wp-content/uploads/Notification_CRP_CSA_XVI-Final.pdf",
   "lastVerified": "2026-10-15",
   "verified": false,

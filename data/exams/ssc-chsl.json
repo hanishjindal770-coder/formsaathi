@@ -41,6 +41,26 @@
       "hi": "CHSL 2026: सभी पदों के लिए 18–27 (जन्म 02-08-1999 से 01-08-2008)। भूतपूर्व सैनिक: वास्तविक आयु से सैन्य सेवा घटाकर 3 वर्ष। PwBD को 10 वर्ष (OBC 13, SC/ST 15)। EWS को कोई छूट नहीं।"
     }
   },
+  "marking": {
+    "correct": 2,
+    "wrong": 0.5,
+    "notes": {
+      "en": "Tier-I: 2 marks per question, −0.50 per wrong answer. For Tier-II Sections I–III use custom marking: +3, −1.",
+      "hi": "टियर-I: हर प्रश्न 2 अंक, हर गलत उत्तर पर −0.50। टियर-II सेक्शन I–III के लिए कस्टम मार्किंग चुनें: +3, −1।"
+    }
+  },
+  "typing": {
+    "language": [
+      "english",
+      "hindi"
+    ],
+    "font": [
+      "mangal-inscript",
+      "mangal-remington"
+    ],
+    "durationMin": 10,
+    "requiredSpeed": "English 35 wpm (≈10,500 KDPH), Hindi 30 wpm (≈9,000 KDPH); Hindi in Mangal font"
+  },
   "sourceUrl": "https://ssc.gov.in/api/attachment/uploads/masterData/NoticeBoards/Notice_of_adv_chsl_2026.pdf",
   "lastVerified": "2026-10-15",
   "verified": true

@@ -1,3 +1,7 @@
+import { typingHi } from "./parts/typing";
+import { answerKeyHi } from "./parts/answerKey";
+import { myFormsHi } from "./parts/myForms";
+import { docgenHi } from "./parts/docgen";
 import type { Dict } from "./en";
 
 const hi: Dict = {
@@ -88,6 +92,48 @@ const hi: Dict = {
       desc: "कट-ऑफ तारीख पर सही उम्र, वर्ग के अनुसार छूट के साथ।",
       examTitle: "{exam} आयु सीमा और आयु कैलकुलेटर",
       examDesc: "{exam} की कट-ऑफ तारीख पर अपनी सही उम्र और पात्रता जाँचें, OBC/SC/ST/PwD छूट के साथ।",
+    },
+    "typing-test": {
+      name: "टाइपिंग टेस्ट (हिंदी और अंग्रेज़ी)",
+      desc: "कृतिदेव, मंगल इनस्क्रिप्ट, रेमिंगटन या अंग्रेज़ी टाइपिंग का अभ्यास करें, नेट WPM, एक्यूरेसी और KDPH के साथ।",
+      examTitle: "{exam} टाइपिंग टेस्ट प्रैक्टिस",
+      examDesc: "{exam} टाइपिंग टेस्ट का ऑनलाइन अभ्यास करें ({rules})। नेट WPM, एक्यूरेसी और KDPH, मुफ़्त और ऑफ़लाइन।",
+    },
+    "answer-key": {
+      name: "आंसर की स्कोर कैलकुलेटर",
+      desc: "अपनी रिस्पॉन्स शीट खोलें और नेगेटिव मार्किंग के साथ अनुमानित स्कोर देखें।",
+      examTitle: "{exam} आंसर की स्कोर कैलकुलेटर",
+      examDesc: "अपनी रिस्पॉन्स शीट से {exam} का स्कोर निकालें ({rules})। फ़ोन पर चलता है, कुछ भी अपलोड नहीं होता।",
+    },
+    "my-forms": {
+      name: "मेरे फॉर्म (ट्रैकर)",
+      desc: "भरे गए हर फॉर्म, फीस, एडमिट कार्ड और परीक्षा की तारीख एक सूची में रखें।",
+      examTitle: "{exam} फॉर्म ट्रैकर",
+      examDesc: "अपने {exam} फॉर्म, फीस और तारीखें ट्रैक करें।",
+    },
+    countdown: {
+      name: "परीक्षा काउंटडाउन और सिलेबस चेकलिस्ट",
+      desc: "परीक्षा में कितने दिन बाकी हैं, और सिलेबस के हर टॉपिक की चेकलिस्ट।",
+      examTitle: "{exam} परीक्षा काउंटडाउन",
+      examDesc: "अपनी {exam} परीक्षा की तारीख तक काउंटडाउन।",
+    },
+    "resume-maker": {
+      name: "रिज़्यूमे मेकर (PDF)",
+      desc: "हिंदी या अंग्रेज़ी में साफ़-सुथरा रिज़्यूमे बनाएँ और PDF डाउनलोड करें।",
+      examTitle: "{exam} रिज़्यूमे मेकर",
+      examDesc: "रिज़्यूमे PDF बनाएँ।",
+    },
+    "biodata-maker": {
+      name: "शादी का बायोडाटा मेकर (PDF)",
+      desc: "फोटो के साथ सुंदर शादी का बायोडाटा हिंदी या अंग्रेज़ी में PDF में बनाएँ।",
+      examTitle: "{exam} बायोडाटा मेकर",
+      examDesc: "बायोडाटा PDF बनाएँ।",
+    },
+    "letter-maker": {
+      name: "प्रार्थना पत्र, NOC और स्व-घोषणा पत्र मेकर",
+      desc: "प्रार्थना पत्र, NOC या स्व-घोषणा पत्र का आसान फॉर्मेट भरें और PDF डाउनलोड करें।",
+      examTitle: "{exam} पत्र मेकर",
+      examDesc: "प्रार्थना पत्र, NOC या स्व-घोषणा पत्र PDF बनाएँ।",
     },
   },
   keyword: {
@@ -220,6 +266,10 @@ const hi: Dict = {
     downloadAll: "डाउनलोड करें",
     note: "JPG में पारदर्शी हिस्सा सफ़ेद हो जाता है।",
   },
+  typing: typingHi,
+  answerKey: answerKeyHi,
+  myForms: myFormsHi,
+  docgen: docgenHi,
   seo: {
     rulesHeading: "{exam} {doc} के नियम",
     ageRulesHeading: "{exam} आयु सीमा",

@@ -12,6 +12,14 @@ export function examToolRules(exam: ExamSpec, tool: EnabledToolId, lang: Lang): 
     const a = exam.age!;
     return lang === "hi" ? `${a.min}–${a.max} वर्ष` : `${a.min}–${a.max} years`;
   }
+  if (tool === "answer-key" && exam.marking) {
+    const m = exam.marking;
+    return lang === "hi" ? `सही +${m.correct}, गलत −${+m.wrong.toFixed(2)}` : `+${m.correct} correct, −${+m.wrong.toFixed(2)} wrong`;
+  }
+  if (tool === "typing-test" && exam.typing) {
+    const t = exam.typing;
+    return `${t.durationMin} ${lang === "hi" ? "मिनट" : "min"}${t.requiredSpeed ? `, ${t.requiredSpeed}` : ""}`;
+  }
   if (tool === "pdf-compress") return (exam.pdfDocs ?? []).map((p) => `${p.label[lang]}: ≤ ${p.maxKB} KB`).join(", ");
   const doc = docOf(tool);
   return doc && exam[doc] ? docRulesSummary(exam[doc]!, lang) : "";
@@ -41,8 +49,12 @@ export function examToolFaq(exam: ExamSpec, tool: EnabledToolId, lang: Lang): Fa
     items.push({ q: fmt(f.ageHow.q, { exam: examName }), a: fmt(f.ageHow.a, { exam: examName }) });
     return items;
   }
+  if ((tool === "answer-key" && exam.marking?.notes) || (tool === "typing-test" && exam.typing)) {
+    const a = tool === "answer-key" ? exam.marking!.notes![lang] : examToolRules(exam, tool, lang);
+    items.push({ q: fmt(d.tools[tool].examTitle, { exam: examName }) + "?", a });
+  }
   const kind = docOf(tool);
-  if (!kind) return [{ q: f.privacy.q, a: f.privacy.a }];
+  if (!kind) return [...items, { q: f.privacy.q, a: f.privacy.a }];
   const doc = d.doc[kind];
   const spec = exam[kind]!;
   items.push({ q: fmt(f.docSize.q, { exam: examName, doc }), a: fmt(f.docSize.a, { doc, rules: docRulesSummary(spec, lang) }) + (spec.notes ? ` ${spec.notes[lang]}` : "") });

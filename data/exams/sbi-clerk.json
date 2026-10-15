@@ -87,6 +87,14 @@
       "hi": "जूनियर एसोसिएट 2026 (CRPD/CR/2026-27/17): 01-04-2026 को 20–28 (जन्म 02-04-1998 से 01-04-2006)। PwBD 10 (OBC 13, SC/ST 15)। भूतपूर्व सैनिक: रक्षा सेवा + 3 वर्ष, अधिकतम 50। EWS को छूट नहीं।"
     }
   },
+  "marking": {
+    "correct": 1,
+    "wrong": 0.25,
+    "notes": {
+      "en": "Prelims: 100 questions, 100 marks; 1/4 of the question's marks deducted per wrong answer.",
+      "hi": "प्रीलिम्स: 100 प्रश्न, 100 अंक; हर गलत उत्तर पर उस प्रश्न के 1/4 अंक कटेंगे।"
+    }
+  },
   "sourceUrl": "https://sbi.bank.in/webfiles/uploads/files_2627/08/JA_2026_Detailed_Advt_Eng.pdf",
   "lastVerified": "2026-10-15",
   "verified": true

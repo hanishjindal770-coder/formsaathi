@@ -1,3 +1,7 @@
+import { typingEn } from "./parts/typing";
+import { answerKeyEn } from "./parts/answerKey";
+import { myFormsEn } from "./parts/myForms";
+import { docgenEn } from "./parts/docgen";
 const en = {
   site: {
     name: "FormSaathi",
@@ -86,6 +90,48 @@ const en = {
       desc: "Exact age on the cutoff date, with category relaxation.",
       examTitle: "{exam} Age Limit & Age Calculator",
       examDesc: "Check your exact age for {exam} on the cutoff date and whether you are eligible, with OBC/SC/ST/PwD relaxation.",
+    },
+    "typing-test": {
+      name: "Typing test (Hindi & English)",
+      desc: "Practise Krutidev, Mangal Inscript, Remington or English typing with net WPM, accuracy and KDPH.",
+      examTitle: "{exam} Typing Test Practice",
+      examDesc: "Practise the {exam} typing test online ({rules}). Net WPM, accuracy and KDPH, free and offline.",
+    },
+    "answer-key": {
+      name: "Answer key score calculator",
+      desc: "Open your response sheet and get your estimated score with negative marking.",
+      examTitle: "{exam} Answer Key Score Calculator",
+      examDesc: "Calculate your {exam} score from your response sheet ({rules}). Works on your phone, nothing is uploaded.",
+    },
+    "my-forms": {
+      name: "My Forms tracker",
+      desc: "Keep every form you applied for, fee, admit card and exam date in one list.",
+      examTitle: "{exam} Form Tracker",
+      examDesc: "Track your {exam} application, fee and dates.",
+    },
+    countdown: {
+      name: "Exam countdown & syllabus checklist",
+      desc: "Days left to your exam, with a checklist for every syllabus topic.",
+      examTitle: "{exam} Exam Countdown",
+      examDesc: "Count down to your {exam} exam date.",
+    },
+    "resume-maker": {
+      name: "Resume maker (PDF)",
+      desc: "Make a clean resume in Hindi or English and download it as a PDF.",
+      examTitle: "{exam} Resume Maker",
+      examDesc: "Make a resume PDF.",
+    },
+    "biodata-maker": {
+      name: "Marriage biodata maker (PDF)",
+      desc: "Make a neat marriage biodata with photo in Hindi or English, as a PDF.",
+      examTitle: "{exam} Biodata Maker",
+      examDesc: "Make a biodata PDF.",
+    },
+    "letter-maker": {
+      name: "Application, NOC & self-declaration maker",
+      desc: "Fill a simple format for an application letter, NOC or self-declaration and download a PDF.",
+      examTitle: "{exam} Letter Maker",
+      examDesc: "Make an application, NOC or self-declaration PDF.",
     },
   },
   keyword: {
@@ -218,6 +264,10 @@ const en = {
     downloadAll: "Download",
     note: "Transparent areas become white in JPG.",
   },
+  typing: typingEn,
+  answerKey: answerKeyEn,
+  myForms: myFormsEn,
+  docgen: docgenEn,
   seo: {
     rulesHeading: "{exam} {doc} rules",
     ageRulesHeading: "{exam} age limit",
