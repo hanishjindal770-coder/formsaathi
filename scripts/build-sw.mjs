@@ -6,6 +6,8 @@ import fs from "node:fs";
 import path from "node:path";
 
 const OUT = "out";
+// Sub-path on GitHub Pages ("/formsaathi"); empty on a custom domain. Must match next.config.
+const BASE = (process.env.NEXT_PUBLIC_BASE_PATH || "").replace(/\/$/, "");
 if (!fs.existsSync(OUT)) throw new Error("out/ not found: run next build first");
 
 function walk(dir) {
@@ -14,17 +16,16 @@ function walk(dir) {
     return d.isDirectory() ? walk(p) : [p];
   });
 }
-const url = (file) => "/" + path.relative(OUT, file).split(path.sep).join("/");
+const rel = (file) => "/" + path.relative(OUT, file).split(path.sep).join("/");
 
 const assets = [
-  ...walk(path.join(OUT, "_next", "static")).map(url).filter((u) => !u.endsWith(".map")),
-  ...walk(path.join(OUT, "fonts")).map(url),
+  ...walk(path.join(OUT, "_next", "static")).map(rel).filter((u) => !u.endsWith(".map")),
   ...["/icons/icon-192.png", "/icons/icon.svg", "/manifest.webmanifest"],
 ];
 const pages = ["hi", "en"].flatMap((l) => [`/${l}/`, `/${l}/photo-resize/`, `/${l}/signature-resize/`, `/${l}/age-calculator/`]);
 for (const p of pages) if (!fs.existsSync(path.join(OUT, p, "index.html"))) throw new Error(`missing page ${p}`);
 
-const precache = [...pages, ...assets];
+const precache = [...pages, ...assets].map((u) => BASE + u);
 const version = crypto.createHash("sha256").update(precache.join("\n")).digest("hex").slice(0, 10);
 const bytes = assets.reduce((n, u) => n + fs.statSync(path.join(OUT, u)).size, 0);
 
@@ -33,6 +34,7 @@ const VERSION = ${JSON.stringify(version)};
 const SHELL = "shell-" + VERSION;
 const RUNTIME = "runtime-v1";
 const PRECACHE = ${JSON.stringify(precache)};
+const BASE = ${JSON.stringify(BASE)};
 
 self.addEventListener("install", (event) => {
   event.waitUntil(caches.open(SHELL).then((c) => c.addAll(PRECACHE)).then(() => self.skipWaiting()));
@@ -66,7 +68,7 @@ self.addEventListener("fetch", (event) => {
   if (url.origin !== self.location.origin) return;
 
   // Hashed build assets, fonts, icons: cache first, they never change under the same URL.
-  if (/^\\/(_next\\/static|fonts|icons)\\//.test(url.pathname)) {
+  if (url.pathname.startsWith(BASE + "/_next/static/") || url.pathname.startsWith(BASE + "/icons/")) {
     event.respondWith(
       caches.match(req).then((hit) => hit || fetch(req).then((res) => {
         if (res.ok) { const copy = res.clone(); caches.open(RUNTIME).then((c) => c.put(req, copy)); }
@@ -91,8 +93,8 @@ self.addEventListener("fetch", (event) => {
         const hit = (await caches.match(key)) || (await caches.match(req, { ignoreSearch: true }));
         if (hit) return hit;
         if (req.mode === "navigate") {
-          const lang = url.pathname.startsWith("/en") ? "en" : "hi";
-          return (await caches.match("/" + lang + "/")) || Response.error();
+          const lang = url.pathname.startsWith(BASE + "/en") ? "en" : "hi";
+          return (await caches.match(BASE + "/" + lang + "/")) || Response.error();
         }
         return Response.error();
       }),

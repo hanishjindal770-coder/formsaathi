@@ -21,6 +21,8 @@ Node 20+ (CI uses 22). Copy `.env.example` to `.env.local` and set `NEXT_PUBLIC_
 
 The build output is plain static files in `out/`.
 
+- **GitHub Pages (current)**: `.github/workflows/pages.yml` builds and publishes on every push to `main`, at `https://<user>.github.io/<repo>/`. It sets `NEXT_PUBLIC_BASE_PATH=/<repo>` because a project site lives under a sub-path. One-time setup: repo **Settings → Pages → Source: GitHub Actions**. When you move to a custom domain, drop `NEXT_PUBLIC_BASE_PATH`.
+
 - **Cloudflare Pages**: build command `npm run build`, output directory `out`, env `NEXT_PUBLIC_SITE_URL`, optional `NEXT_PUBLIC_CF_ANALYTICS_TOKEN`.
 - **Netlify**: same build command, publish directory `out`.
 - **Vercel**: framework preset Next.js; it detects `output: 'export'`. Set the same env vars.
