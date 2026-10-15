@@ -1,3 +1,4 @@
+import { infoEn } from "./parts/info";
 import { bulkEn } from "./parts/bulk";
 import { studioEn } from "./parts/studio";
 import { typingEn } from "./parts/typing";
@@ -303,6 +304,7 @@ const en = {
     note: "Transparent areas become white in JPG.",
   },
   studio: studioEn,
+  info: infoEn,
   bulk: bulkEn,
   typing: typingEn,
   answerKey: answerKeyEn,

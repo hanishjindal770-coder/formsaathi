@@ -1,3 +1,4 @@
+import { infoHi } from "./parts/info";
 import { bulkHi } from "./parts/bulk";
 import { studioHi } from "./parts/studio";
 import { typingHi } from "./parts/typing";
@@ -305,6 +306,7 @@ const hi: Dict = {
     note: "JPG में पारदर्शी हिस्सा सफ़ेद हो जाता है।",
   },
   studio: studioHi,
+  info: infoHi,
   bulk: bulkHi,
   typing: typingHi,
   answerKey: answerKeyHi,

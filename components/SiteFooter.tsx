@@ -16,6 +16,11 @@ export default function SiteFooter({ lang }: { lang: Lang }) {
             </Link>
           ))}
         </nav>
+        <nav className="flex flex-wrap gap-x-4 gap-y-1">
+          {(["about", "privacy", "contact"] as const).map((k) => (
+            <Link key={k} href={`/${lang}/${k}/`} className="py-2">{t.info.links[k]}</Link>
+          ))}
+        </nav>
         <p>🔒 {t.site.privacy} {t.site.offlineReady}</p>
         <p>{t.site.footer}</p>
         {/* Future: paid "complete document kit (ZIP)" upsell and about/contact links go here. */}

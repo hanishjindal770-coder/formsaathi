@@ -20,6 +20,9 @@ jobs:
       # Project site: https://<user>.github.io/<repo>/ — the repo name is the base path.
       NEXT_PUBLIC_BASE_PATH: /${{ github.event.repository.name }}
       NEXT_PUBLIC_SITE_URL: https://${{ github.repository_owner }}.github.io/${{ github.event.repository.name }}
+      # Cloudflare Web Analytics (free, no cookies). Add the token as a repository variable named
+      # CF_ANALYTICS_TOKEN (Settings > Secrets and variables > Actions > Variables); empty = off.
+      NEXT_PUBLIC_CF_ANALYTICS_TOKEN: ${{ vars.CF_ANALYTICS_TOKEN }}
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
