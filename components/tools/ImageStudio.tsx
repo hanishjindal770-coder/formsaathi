@@ -262,7 +262,8 @@ export default function ImageStudio({ lang, t, initialTab = "resize", preset }: 
 
       {error && <p role="alert" className="text-sm text-bad">{error}</p>}
 
-      <div className="sticky bottom-2 z-10 rounded-xl border border-line bg-surface p-2 shadow-lg">
+      {/* Not sticky: a floating bar covered the KB box and other fields on phones. */}
+      <div className="rounded-xl border border-line bg-surface p-2">
         <a
           className={`btn-primary w-full ${!rendered || working ? "pointer-events-none opacity-60" : ""}`}
           href={url || undefined}
