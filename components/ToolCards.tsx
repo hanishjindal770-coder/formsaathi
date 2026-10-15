@@ -1,8 +1,7 @@
 import Link from "next/link";
 import { getDict, type Lang } from "@/i18n";
-import type { EnabledToolId } from "@/lib/tools/registry";
+import { TOOLS, type EnabledToolId } from "@/lib/tools/registry";
 
-const ICONS: Record<EnabledToolId, string> = { "photo-resize": "🖼️", "signature-resize": "✍️", "age-calculator": "🎂" };
 
 export default function ToolCards({ lang, tools, hrefFor }: { lang: Lang; tools: EnabledToolId[]; hrefFor: (t: EnabledToolId) => string }) {
   const t = getDict(lang).tools;
@@ -11,7 +10,7 @@ export default function ToolCards({ lang, tools, hrefFor }: { lang: Lang; tools:
       {tools.map((id) => (
         <li key={id}>
           <Link href={hrefFor(id)} className="card flex min-h-20 items-start gap-3 text-ink no-underline hover:border-brand">
-            <span aria-hidden className="text-3xl">{ICONS[id]}</span>
+            <span aria-hidden className="text-3xl">{TOOLS.find((x) => x.id === id)!.icon}</span>
             <span>
               <span className="block font-semibold text-brand">{t[id].name}</span>
               <span className="block text-sm text-muted">{t[id].desc}</span>

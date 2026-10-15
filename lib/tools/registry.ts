@@ -10,14 +10,14 @@ import type { DocKind, ExamSpec } from "@/lib/exams/schema";
 export type ToolId =
   | "photo-resize"
   | "signature-resize"
-  | "age-calculator"
-  // Phase 1, later sessions:
   | "thumb-resize"
   | "declaration-resize"
-  | "photo-name-date"
+  | "age-calculator"
   | "pdf-compress"
   | "image-to-pdf"
   | "pdf-merge"
+  | "passport-photo-sheet"
+  | "image-convert"
   // Phase 2:
   | "answer-key"
   | "typing-test"
@@ -27,6 +27,7 @@ export type ToolId =
 export type ToolDef = {
   id: ToolId;
   enabled: boolean;
+  icon: string;
   /** Which exam document the tool works on (document tools only). */
   doc?: DocKind;
   /** Whether the tool can be set up for a given exam. */
@@ -36,23 +37,26 @@ export type ToolDef = {
 };
 
 export const TOOLS: ToolDef[] = [
-  { id: "photo-resize", enabled: true, doc: "photo", generic: true, availableFor: (e) => !!e.photo },
-  { id: "signature-resize", enabled: true, doc: "signature", generic: true, availableFor: (e) => !!e.signature },
-  { id: "age-calculator", enabled: true, generic: true, availableFor: (e) => !!e.age },
-  { id: "thumb-resize", enabled: false, doc: "thumb", generic: true, availableFor: (e) => !!e.thumb },
-  { id: "declaration-resize", enabled: false, doc: "declaration", generic: true, availableFor: (e) => !!e.declaration },
-  { id: "photo-name-date", enabled: false, doc: "photo", generic: true, availableFor: (e) => !!e.photo && !!e.photoWithNameDate },
-  { id: "pdf-compress", enabled: false, generic: true, availableFor: (e) => !!e.pdfDocs?.length },
-  { id: "image-to-pdf", enabled: false, generic: true, availableFor: () => false },
-  { id: "pdf-merge", enabled: false, generic: true, availableFor: () => false },
-  { id: "answer-key", enabled: false, generic: false, availableFor: () => false },
-  { id: "typing-test", enabled: false, generic: true, availableFor: (e) => !!e.typing },
-  { id: "my-forms", enabled: false, generic: true, availableFor: () => false },
-  { id: "countdown", enabled: false, generic: false, availableFor: () => false },
+  { id: "photo-resize", enabled: true, icon: "🖼️", doc: "photo", generic: true, availableFor: (e) => !!e.photo },
+  { id: "signature-resize", enabled: true, icon: "✍️", doc: "signature", generic: true, availableFor: (e) => !!e.signature },
+  { id: "thumb-resize", enabled: true, icon: "👍", doc: "thumb", generic: true, availableFor: (e) => !!e.thumb },
+  { id: "declaration-resize", enabled: true, icon: "📝", doc: "declaration", generic: true, availableFor: (e) => !!e.declaration },
+  { id: "age-calculator", enabled: true, icon: "🎂", generic: true, availableFor: (e) => !!e.age },
+  { id: "pdf-compress", enabled: true, icon: "🗜️", generic: true, availableFor: (e) => !!e.pdfDocs?.length },
+  { id: "image-to-pdf", enabled: true, icon: "📄", generic: true, availableFor: () => false },
+  { id: "pdf-merge", enabled: true, icon: "📚", generic: true, availableFor: () => false },
+  { id: "passport-photo-sheet", enabled: true, icon: "🖨️", generic: true, availableFor: () => false },
+  { id: "image-convert", enabled: true, icon: "🔄", generic: true, availableFor: () => false },
+  { id: "answer-key", enabled: false, icon: "✅", generic: false, availableFor: () => false },
+  { id: "typing-test", enabled: false, icon: "⌨️", generic: true, availableFor: (e) => !!e.typing },
+  { id: "my-forms", enabled: false, icon: "🗂️", generic: true, availableFor: () => false },
+  { id: "countdown", enabled: false, icon: "⏳", generic: false, availableFor: () => false },
 ];
 
-export type EnabledToolId = "photo-resize" | "signature-resize" | "age-calculator";
+/** Tools that are live on the site. */
+export type EnabledToolId = Exclude<ToolId, "answer-key" | "typing-test" | "my-forms" | "countdown">;
 
 export const enabledTools = () => TOOLS.filter((t) => t.enabled) as (ToolDef & { id: EnabledToolId })[];
 export const getTool = (id: string) => enabledTools().find((t) => t.id === id);
 export const toolsForExam = (exam: ExamSpec) => enabledTools().filter((t) => t.availableFor(exam));
+export const docOf = (id: EnabledToolId) => TOOLS.find((t) => t.id === id)?.doc;

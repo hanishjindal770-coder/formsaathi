@@ -4,7 +4,7 @@ import { fmt, getDict, LOCALES, type Lang } from "@/i18n";
 import { getAllExams, getExam } from "@/lib/exams/load";
 import { similarExams } from "@/lib/exams/describe";
 import { alternates, examPath, examToolParams, examToolPath, homePath, SITE_URL } from "@/lib/routes";
-import { examToolFaq, examToolMeta } from "@/lib/seo/content";
+import { examToolFaq, examToolMeta, rejectionKey } from "@/lib/seo/content";
 import { TOOLS, toolsForExam, type EnabledToolId } from "@/lib/tools/registry";
 import ToolSlot from "@/components/ToolSlot";
 import ToolCards from "@/components/ToolCards";
@@ -71,17 +71,16 @@ export default async function ExamToolPage({ params }: { params: Promise<Params>
       <ShareButtons lang={lang} url={`${SITE_URL}/${lang}/${slug}/${toolId}/`} title={meta.title} />
       <AdSlot position="inline" />
 
-      {kind ? (
-        <DocRulesTable spec={exam[kind]!} kind={kind} examName={name} lang={lang} nameDate={kind === "photo" && exam.photoWithNameDate} />
-      ) : (
-        <AgeRulesTable age={exam.age!} examName={name} lang={lang} />
+      {kind && <DocRulesTable spec={exam[kind]!} kind={kind} examName={name} lang={lang} nameDate={kind === "photo" && exam.photoWithNameDate} />}
+      {toolId === "age-calculator" && <AgeRulesTable age={exam.age!} examName={name} lang={lang} />}
+      {rejectionKey(toolId) && (
+        <section className="prose-section">
+          <h2>{d.seo.rejectionHeading}</h2>
+          <ul className="list-disc space-y-1 pl-5">
+            {d.seo.rejection[rejectionKey(toolId)!].map((r) => <li key={r}>{r}</li>)}
+          </ul>
+        </section>
       )}
-      <section className="prose-section">
-        <h2>{d.seo.rejectionHeading}</h2>
-        <ul className="list-disc space-y-1 pl-5">
-          {d.seo.rejection[kind === "photo" ? "photo" : kind ? "signature" : "age"].map((r) => <li key={r}>{r}</li>)}
-        </ul>
-      </section>
       <Faq heading={d.seo.faqHeading} items={examToolFaq(exam, toolId, lang)} />
       {otherTools.length > 0 && (
         <section className="prose-section">

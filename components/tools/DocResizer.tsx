@@ -21,10 +21,12 @@ export type DocResizerProps = {
   /** Exam mode: the exam's rules for this document. */
   exam?: { slug: string; name: string; spec: DocSpec; nameDate?: boolean };
   /** Generic mode presets (keyword pages). */
-  preset?: { maxKB?: number; minKB?: number };
+  preset?: { maxKB?: number; minKB?: number; widthPx?: number; heightPx?: number };
 };
 
 type Settings = { w: string; h: string; minKB: string; maxKB: string; dpi: string; format: "jpeg" | "png"; aspect: string };
+
+const DEFAULT_MAX_KB: Record<DocKind, number> = { photo: 50, signature: 20, thumb: 50, declaration: 100 };
 
 const ASPECTS: Record<string, number | null> = { free: null, passport: 3.5 / 4.5, square: 1, signature: 3 };
 
@@ -40,13 +42,13 @@ export default function DocResizer({ lang, kind, t, docName, exam, preset }: Doc
   const [crop, setCrop] = useState<Rect | null>(null);
   const [custom, setCustom] = useState(!exam);
   const [settings, setSettings] = useState<Settings>(() => ({
-    w: "",
-    h: "",
+    w: preset?.widthPx ? String(preset.widthPx) : "",
+    h: preset?.heightPx ? String(preset.heightPx) : "",
     minKB: preset?.minKB ? String(preset.minKB) : "",
-    maxKB: String(preset?.maxKB ?? (kind === "photo" ? 50 : 20)),
+    maxKB: preset?.widthPx && !preset.maxKB ? "" : String(preset?.maxKB ?? DEFAULT_MAX_KB[kind]),
     dpi: String(DEFAULT_DPI),
     format: "jpeg",
-    aspect: kind === "signature" ? "signature" : "free",
+    aspect: kind === "signature" ? "signature" : kind === "thumb" ? "square" : "free",
   }));
   const [clean, setClean] = useState(isInk);
   const [ink, setInk] = useState<InkColor>("black");

@@ -4,7 +4,8 @@ import { notFound } from "next/navigation";
 import { fmt, getDict, LOCALES, type Lang } from "@/i18n";
 import { getAllExams, getExam } from "@/lib/exams/load";
 import { similarExams } from "@/lib/exams/describe";
-import { getKeywordPage, KEYWORD_PAGES } from "@/lib/keywords";
+import { getKeywordPage, KEYWORD_PAGES, keywordVars } from "@/lib/keywords";
+import { rejectionKey } from "@/lib/seo/content";
 import { alternates, examPath, examToolPath, genericToolPath, homePath, resolveSegment, secondSegmentSlugs, SITE_URL } from "@/lib/routes";
 import { getTool, toolsForExam, type EnabledToolId } from "@/lib/tools/registry";
 import ToolSlot from "@/components/ToolSlot";
@@ -46,7 +47,8 @@ function pageInfo(lang: Lang, slug: string) {
   }
   const k = getKeywordPage(slug)!;
   const kt = d.keyword[k.kind];
-  return { seg, title: fmt(kt.title, { kb: k.maxKB }), h1: fmt(kt.title, { kb: k.maxKB }), description: fmt(kt.desc, { kb: k.maxKB }) };
+  const vars = keywordVars(k);
+  return { seg, title: fmt(kt.title, vars), h1: fmt(kt.title, vars), description: fmt(kt.desc, vars) };
 }
 
 export async function generateMetadata({ params }: { params: Promise<Params> }): Promise<Metadata> {
@@ -100,7 +102,7 @@ export default async function SecondLevelPage({ params }: { params: Promise<Para
       <Breadcrumbs items={[home, { name: info.h1, href: genericToolPath(lang, slug) }]} />
       <h1 className="mt-2 text-2xl font-semibold">{info.h1}</h1>
       <p className="mb-4 text-muted">{info.description}</p>
-      <ToolSlot tool={toolId} lang={lang} preset={keyword ? { maxKB: keyword.maxKB } : undefined} />
+      <ToolSlot tool={toolId} lang={lang} preset={keyword?.preset} />
       <ShareButtons lang={lang} url={url} title={info.h1} />
       <AdSlot position="inline" />
       <ExamLinks heading={d.seo.popularExams} exams={examsWithTool} lang={lang} hrefFor={(e) => examToolPath(lang, e.slug, toolId)} />
@@ -110,17 +112,17 @@ export default async function SecondLevelPage({ params }: { params: Promise<Para
           <ul className="flex flex-wrap gap-2">
             {KEYWORD_PAGES.filter((k) => k.kind === keyword.kind && k.slug !== slug).map((k) => (
               <li key={k.slug}>
-                <Link href={genericToolPath(lang, k.slug)} className="btn-secondary min-h-10 px-3 text-sm">{k.maxKB} KB</Link>
+                <Link href={genericToolPath(lang, k.slug)} className="btn-secondary min-h-10 px-3 text-sm">{fmt(d.keyword[k.kind].title, keywordVars(k))}</Link>
               </li>
             ))}
           </ul>
         </section>
       )}
-      {toolId !== "age-calculator" && (
+      {rejectionKey(toolId) && rejectionKey(toolId) !== "age" && (
         <section className="prose-section">
           <h2>{d.seo.rejectionHeading}</h2>
           <ul className="list-disc space-y-1 pl-5">
-            {d.seo.rejection[toolId === "photo-resize" ? "photo" : "signature"].map((r) => <li key={r}>{r}</li>)}
+            {d.seo.rejection[rejectionKey(toolId)!].map((r) => <li key={r}>{r}</li>)}
           </ul>
         </section>
       )}

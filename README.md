@@ -2,7 +2,7 @@
 
 Free, mobile-first, Hindi-first toolkit for Indian government-exam forms. Pick an exam and every tool sets itself to that exam's rules. All file processing happens in the browser; nothing is uploaded. Ships as a static site (Next.js `output: 'export'`) and an installable, offline-capable PWA.
 
-**Status: Phase 1, first session.** Built: exam data + validator, image library, photo resizer, signature resizer + cleaner, age calculator, programmatic pages + sitemap, PWA. Not yet built: thumb/declaration pages, photo-with-name-date as its own page (it already works inside the UPSC photo tool), PDF tools, passport print sheet, JPG↔PNG.
+**Status: Phase 1 complete.** Tools: photo, signature, thumb impression and handwritten declaration resizers (generic or set to an exam), photo with name & date (UPSC), age calculator, compress PDF to KB, images to PDF, merge PDFs, passport photo print sheet (8/16/32 on A4), JPG↔PNG. Keyword pages: resize image to X KB / X×Y px, signature to X KB, compress PDF to X KB, JPG↔PNG. Phase 2 tools are stubbed in `lib/tools/registry.ts`.
 
 ## Run locally
 
@@ -61,7 +61,7 @@ components/tools/           DocResizer, Cropper, AgeCalculator (client)
 components/seo/             rules tables, FAQ + FAQPage schema, breadcrumbs
 components/AdSlot.tsx       renders nothing unless NEXT_PUBLIC_ADS_ENABLED=1
 components/AffiliateBox.tsx reads data/affiliates.json (empty)
-lib/image  lib/exams  lib/pdf (Phase 1 next)  lib/tools/registry.ts (all tools incl. Phase 2 stubs)
+lib/image  lib/exams  lib/pdf (pdf-lib; pdf.js loaded only by the compressor)  lib/print (sheet layout)  lib/tools/registry.ts (all tools incl. Phase 2 stubs)
 data/exams/*.json  data/affiliates.json  lib/keywords.ts (keyword page sizes)
 i18n/en.ts hi.ts            all UI text
 scripts/build-sw.mjs        generates out/sw.js after build

@@ -6,7 +6,7 @@ import ToolCards from "@/components/ToolCards";
 import JsonLd from "@/components/seo/JsonLd";
 import { getAllExams } from "@/lib/exams/load";
 import { summarize } from "@/lib/exams/describe";
-import { KEYWORD_PAGES } from "@/lib/keywords";
+import { KEYWORD_PAGES, keywordVars } from "@/lib/keywords";
 import { alternates, genericToolPath, SITE_URL } from "@/lib/routes";
 import { enabledTools } from "@/lib/tools/registry";
 import { fmt } from "@/i18n";
@@ -39,7 +39,7 @@ export default async function Home({ params }: { params: Promise<{ lang: string 
           {KEYWORD_PAGES.map((k) => (
             <li key={k.slug}>
               <Link href={genericToolPath(lang, k.slug)} className="btn-secondary min-h-10 px-3 text-sm">
-                {fmt(t.keyword[k.kind].title, { kb: k.maxKB })}
+                {fmt(t.keyword[k.kind].title, keywordVars(k))}
               </Link>
             </li>
           ))}

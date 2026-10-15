@@ -19,10 +19,13 @@ function walk(dir) {
 const rel = (file) => "/" + path.relative(OUT, file).split(path.sep).join("/");
 
 const assets = [
-  ...walk(path.join(OUT, "_next", "static")).map(rel).filter((u) => !u.endsWith(".map")),
+  // Big chunks (pdf.js) are left out of the install download; they are cached the first time a PDF tool uses them.
+  ...walk(path.join(OUT, "_next", "static")).filter((f) => !f.endsWith(".map") && fs.statSync(f).size < 250 * 1024).map(rel),
   ...["/icons/icon-192.png", "/icons/icon.svg", "/manifest.webmanifest"],
 ];
-const pages = ["hi", "en"].flatMap((l) => [`/${l}/`, `/${l}/photo-resize/`, `/${l}/signature-resize/`, `/${l}/age-calculator/`]);
+// Home + every generic tool page. Exam pages are cached on first visit.
+const TOOL_PAGES = ["photo-resize", "signature-resize", "thumb-resize", "declaration-resize", "age-calculator", "pdf-compress", "image-to-pdf", "pdf-merge", "passport-photo-sheet", "image-convert"];
+const pages = ["hi", "en"].flatMap((l) => [`/${l}/`, ...TOOL_PAGES.map((t) => `/${l}/${t}/`)]);
 for (const p of pages) if (!fs.existsSync(path.join(OUT, p, "index.html"))) throw new Error(`missing page ${p}`);
 
 const precache = [...pages, ...assets].map((u) => BASE + u);
