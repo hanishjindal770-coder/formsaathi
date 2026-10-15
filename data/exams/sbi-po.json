@@ -6,7 +6,7 @@
   },
   "body": "SBI",
   "category": "banking",
-  "officialSite": "https://sbi.co.in/web/careers",
+  "officialSite": "https://sbi.bank.in/web/careers/current-openings",
   "photo": {
     "format": [
       "jpg",
@@ -18,8 +18,8 @@
     "heightPx": 230,
     "background": "light",
     "notes": {
-      "en": "Recent passport-style colour photo on a light (preferably white) background, looking straight at the camera.",
-      "hi": "हाल की पासपोर्ट साइज़ रंगीन फोटो, हल्की (बेहतर हो सफ़ेद) पृष्ठभूमि, कैमरे की ओर सीधे देखते हुए।"
+      "en": "Recent colour passport-style photo, 3.5 × 4.5 cm, 200 × 230 px (preferred), on a light (preferably white) background. No cap or dark glasses. A live photo is also captured by webcam/phone while applying.",
+      "hi": "हाल की रंगीन पासपोर्ट फोटो, 3.5 × 4.5 cm, 200 × 230 px (बेहतर), हल्के (बेहतर हो सफ़ेद) बैकग्राउंड पर। टोपी या काला चश्मा नहीं। आवेदन के समय वेबकैम/फ़ोन से लाइव फोटो भी ली जाती है।"
     }
   },
   "signature": {
@@ -33,8 +33,8 @@
     "heightPx": 60,
     "background": "white",
     "notes": {
-      "en": "Sign on white paper with a black ink pen. Signatures in CAPITAL letters are not accepted.",
-      "hi": "सफ़ेद कागज़ पर काली स्याही के पेन से हस्ताक्षर करें। कैपिटल अक्षरों में हस्ताक्षर स्वीकार नहीं होते।"
+      "en": "Black ink pen on white paper, 140 × 60 px (preferred). Signatures in CAPITAL LETTERS are not accepted.",
+      "hi": "सफ़ेद कागज़ पर काली स्याही के पेन से, 140 × 60 px (बेहतर)। कैपिटल अक्षरों में सिग्नेचर स्वीकार नहीं।"
     }
   },
   "thumb": {
@@ -46,10 +46,11 @@
     "maxKB": 50,
     "widthPx": 240,
     "heightPx": 240,
+    "dpi": 200,
     "background": "white",
     "notes": {
-      "en": "Left thumb impression on white paper with black or blue ink.",
-      "hi": "सफ़ेद कागज़ पर काली या नीली स्याही से बाएँ अंगूठे का निशान।"
+      "en": "Left thumb impression in black or blue ink on white paper, 240 × 240 px at 200 DPI (3 × 3 cm).",
+      "hi": "सफ़ेद कागज़ पर काली या नीली स्याही से बाएँ अंगूठे का निशान, 240 × 240 px, 200 DPI (3 × 3 cm)।"
     }
   },
   "declaration": {
@@ -61,16 +62,17 @@
     "maxKB": 100,
     "widthPx": 800,
     "heightPx": 400,
+    "dpi": 200,
     "background": "white",
     "notes": {
-      "en": "Handwritten declaration in English, in your own handwriting, on white paper with black ink.",
-      "hi": "अंग्रेज़ी में अपनी लिखावट में घोषणा, सफ़ेद कागज़ पर काली स्याही से।"
+      "en": "Write in English, in your own handwriting (not CAPITAL letters), black ink on white paper, 800 × 400 px at 200 DPI (10 × 5 cm). Text: \"I, ______ (Name of the candidate), Date of Birth ______, hereby declare that all the information submitted by me in the application form is correct, true and valid. I will present the supporting documents as and when required. The signature, photograph and left thumb impression is of mine.\"",
+      "hi": "अंग्रेज़ी में, अपनी लिखावट में (कैपिटल अक्षरों में नहीं), सफ़ेद कागज़ पर काली स्याही से, 800 × 400 px, 200 DPI (10 × 5 cm)। लिखना है: \"I, ______ (Name of the candidate), Date of Birth ______, hereby declare that all the information submitted by me in the application form is correct, true and valid. I will present the supporting documents as and when required. The signature, photograph and left thumb impression is of mine.\""
     }
   },
   "age": {
     "min": 21,
     "max": 30,
-    "cutoffDate": "2025-04-01",
+    "cutoffDate": "2026-04-01",
     "relaxation": {
       "OBC": 3,
       "SC": 5,
@@ -78,15 +80,18 @@
       "EWS": 0,
       "PwD": 10,
       "ExSM": 5
+    },
+    "upperLimitRule": "notAttained",
+    "notes": {
+      "en": "SBI PO 2026 (CRPD/PO/2026-27/09): 21–30 as on 01-04-2026 (born 02-04-1996 to 01-04-2005). PwBD 10 (OBC 13, SC/ST 15).",
+      "hi": "SBI PO 2026 (CRPD/PO/2026-27/09): 01-04-2026 को 21–30 (जन्म 02-04-1996 से 01-04-2005)। PwBD 10 (OBC 13, SC/ST 15)।"
     }
   },
-  "sourceUrl": "https://sbi.co.in/web/careers",
+  "sourceUrl": "https://sbi.bank.in/documents/77530/57941/18062026_1_Detailed_Adv.2026.pdf/1f1a9532-8a2f-6e59-08a0-616d62a497b1?t=1781759726353",
   "lastVerified": "2026-10-15",
   "verified": false,
   "todo": [
-    "Every value in this file is a template from commonly published figures and has NOT been checked against the official notification.",
-    "Confirm cutoff date",
-    "Confirm document sizes match IBPS-style specs",
-    "Replace sourceUrl with the notification PDF"
+    "Age and relaxation confirmed (Hindi notice). Photo, signature, thumb and declaration sizes are copied from SBI Junior Associates 2026 because the English notice could not be opened; check them.",
+    "Confirm the Ex-Servicemen relaxation (set to 5 as a placeholder)."
   ]
 }

@@ -57,9 +57,10 @@ const hi = (v: PxValue) => (typeof v === "number" ? v : v.max);
  * - nothing: free aspect, keeps the crop's size (capped at GENERIC_MAX_SIDE).
  */
 export function resolveTargetDims(
-  spec: Pick<DocSpec, "widthPx" | "heightPx" | "widthCm" | "heightCm" | "dpi">,
+  spec: Pick<DocSpec, "widthPx" | "heightPx" | "widthCm" | "heightCm" | "dpi" | "aspect">,
   kind: DocKind,
   crop?: { width: number; height: number },
+  maxSide = GENERIC_MAX_SIDE,
 ): TargetDims {
   const dpi = spec.dpi ?? DEFAULT_DPI;
   if (typeof spec.widthPx === "number" && typeof spec.heightPx === "number") {
@@ -72,7 +73,7 @@ export function resolveTargetDims(
   }
   if (spec.widthPx !== undefined && spec.heightPx !== undefined) {
     const [wMin, wMax, hMin, hMax] = [lo(spec.widthPx), hi(spec.widthPx), lo(spec.heightPx), hi(spec.heightPx)];
-    const aspect = Math.min(Math.max(DEFAULT_ASPECT[kind], wMin / hMax), wMax / hMin);
+    const aspect = Math.min(Math.max(spec.aspect ?? DEFAULT_ASPECT[kind], wMin / hMax), wMax / hMin);
     // Largest height such that width = aspect*height stays inside both ranges.
     let height = Math.min(hMax, Math.floor(wMax / aspect));
     if (crop) height = Math.min(height, Math.max(crop.height, Math.ceil(wMin / aspect), hMin));
@@ -89,7 +90,7 @@ export function resolveTargetDims(
   if (typeof spec.heightPx === "number") {
     return { width: Math.max(1, Math.round((spec.heightPx * cw) / ch)), height: spec.heightPx, aspect: null, dpi };
   }
-  const scale = Math.min(1, GENERIC_MAX_SIDE / Math.max(cw, ch));
+  const scale = Math.min(1, maxSide / Math.max(cw, ch));
   return { width: Math.max(1, Math.round(cw * scale)), height: Math.max(1, Math.round(ch * scale)), aspect: null, dpi };
 }
 

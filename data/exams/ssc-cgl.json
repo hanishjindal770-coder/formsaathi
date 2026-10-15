@@ -7,21 +7,6 @@
   "body": "SSC",
   "category": "ssc",
   "officialSite": "https://ssc.gov.in",
-  "photo": {
-    "format": [
-      "jpg",
-      "jpeg"
-    ],
-    "minKB": 20,
-    "maxKB": 50,
-    "widthCm": 3.5,
-    "heightCm": 4.5,
-    "background": "white",
-    "notes": {
-      "en": "Recent colour photo, without cap or spectacles, face clearly visible. Recent SSC forms may capture the photo live through the app or webcam; check the notice.",
-      "hi": "हाल की रंगीन फोटो, बिना टोपी और चश्मे के, चेहरा साफ़ दिखे। नए SSC फॉर्म में फोटो ऐप या वेबकैम से लाइव ली जा सकती है; नोटिस देखें।"
-    }
-  },
   "signature": {
     "format": [
       "jpg",
@@ -33,14 +18,15 @@
     "heightCm": 2.0,
     "background": "white",
     "notes": {
-      "en": "Sign on white paper with a black or blue pen. Signature in capital letters is not accepted.",
-      "hi": "सफ़ेद कागज़ पर काले या नीले पेन से हस्ताक्षर करें। कैपिटल अक्षरों में हस्ताक्षर मान्य नहीं है।"
+      "en": "Scanned signature in JPEG/JPG, 10–20 KB, about 6.0 cm wide × 2.0 cm high. SSC gives no DPI; we use 100 DPI.",
+      "hi": "स्कैन किया हुआ सिग्नेचर JPEG/JPG में, 10–20 KB, लगभग 6.0 cm चौड़ा × 2.0 cm ऊँचा। SSC ने DPI नहीं दिया है; हम 100 DPI लेते हैं।"
     }
   },
+  "livePhoto": true,
   "age": {
     "min": 18,
     "max": 32,
-    "cutoffDate": "2025-08-01",
+    "cutoffDate": "2026-08-01",
     "relaxation": {
       "OBC": 3,
       "SC": 5,
@@ -49,19 +35,13 @@
       "PwD": 10,
       "ExSM": 3
     },
+    "upperLimitRule": "notAttained",
     "notes": {
-      "en": "Age limit differs by post (18–27, 18–30, 20–30, 18–32). This uses the widest range.",
-      "hi": "आयु सीमा पद के अनुसार अलग है (18–27, 18–30, 20–30, 18–32)। यहाँ सबसे बड़ी सीमा ली गई है।"
+      "en": "CGL 2026: age limit depends on the post — 18–27 (Auditor, Accountant, Postal/Sorting Asst, Tax Asst…), 18–30 (Inspector, ASO in some ministries, AAO…), 20–30 (ASO in CSS/MEA/Railways, SI in CBI), 18–32 (JSO). This calculator uses 18–32; check your post. ExSM: 3 years after deducting military service from actual age. PwBD gets 10 years (13 for OBC, 15 for SC/ST). No EWS relaxation.",
+      "hi": "CGL 2026: आयु सीमा पद के अनुसार है — 18–27 (ऑडिटर, अकाउंटेंट, डाक/छँटाई सहायक, कर सहायक…), 18–30 (इंस्पेक्टर, कुछ मंत्रालयों में ASO, AAO…), 20–30 (CSS/MEA/रेलवे में ASO, CBI में SI), 18–32 (JSO)। यह कैलकुलेटर 18–32 लेता है; अपना पद जाँचें। भूतपूर्व सैनिक: वास्तविक आयु से सैन्य सेवा घटाकर 3 वर्ष। PwBD को 10 वर्ष (OBC 13, SC/ST 15)। EWS को कोई छूट नहीं।"
     }
   },
-  "sourceUrl": "https://ssc.gov.in",
+  "sourceUrl": "https://ssc.gov.in/api/attachment/uploads/masterData/NoticeBoards/Notice_of_adv_cgl_2026.pdf",
   "lastVerified": "2026-10-15",
-  "verified": false,
-  "todo": [
-    "Every value in this file is a template from commonly published figures and has NOT been checked against the official notification.",
-    "Confirm cutoff date and per-post age limits for the current cycle",
-    "Confirm whether photo is uploaded or captured live",
-    "Confirm DPI for cm-based sizes",
-    "Replace sourceUrl with the notification PDF"
-  ]
+  "verified": true
 }

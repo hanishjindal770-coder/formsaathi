@@ -22,9 +22,9 @@ describe("exam data", () => {
       for (const doc of [e.photo, e.signature, e.thumb, e.declaration]) {
         if (!doc) continue;
         expect(doc.maxKB).toBeLessThanOrEqual(5000);
-        const hasPx = doc.widthPx !== undefined && doc.heightPx !== undefined;
-        const hasCm = doc.widthCm !== undefined && doc.heightCm !== undefined;
-        expect(hasPx || hasCm, `${e.slug} needs px or cm dimensions`).toBe(true);
+        // Width and height come in pairs (or not at all, when the exam gives only a KB range).
+        expect(doc.widthPx === undefined, `${e.slug} px pair`).toBe(doc.heightPx === undefined);
+        expect(doc.widthCm === undefined, `${e.slug} cm pair`).toBe(doc.heightCm === undefined);
       }
     }
   });

@@ -7,21 +7,6 @@
   "body": "SSC",
   "category": "police",
   "officialSite": "https://ssc.gov.in",
-  "photo": {
-    "format": [
-      "jpg",
-      "jpeg"
-    ],
-    "minKB": 20,
-    "maxKB": 50,
-    "widthCm": 3.5,
-    "heightCm": 4.5,
-    "background": "white",
-    "notes": {
-      "en": "Recent colour photo, without cap or spectacles, face clearly visible. Recent SSC forms may capture the photo live through the app or webcam; check the notice.",
-      "hi": "हाल की रंगीन फोटो, बिना टोपी और चश्मे के, चेहरा साफ़ दिखे। नए SSC फॉर्म में फोटो ऐप या वेबकैम से लाइव ली जा सकती है; नोटिस देखें।"
-    }
-  },
   "signature": {
     "format": [
       "jpg",
@@ -33,10 +18,11 @@
     "heightCm": 2.0,
     "background": "white",
     "notes": {
-      "en": "Sign on white paper with a black or blue pen. Signature in capital letters is not accepted.",
-      "hi": "सफ़ेद कागज़ पर काले या नीले पेन से हस्ताक्षर करें। कैपिटल अक्षरों में हस्ताक्षर मान्य नहीं है।"
+      "en": "Scanned signature in JPEG/JPG, 10–20 KB, about 6.0 cm wide × 2.0 cm high. SSC gives no DPI; we use 100 DPI.",
+      "hi": "स्कैन किया हुआ सिग्नेचर JPEG/JPG में, 10–20 KB, लगभग 6.0 cm चौड़ा × 2.0 cm ऊँचा। SSC ने DPI नहीं दिया है; हम 100 DPI लेते हैं।"
     }
   },
+  "livePhoto": true,
   "age": {
     "min": 18,
     "max": 23,
@@ -46,16 +32,16 @@
       "SC": 5,
       "ST": 5,
       "EWS": 0,
-      "PwD": 10,
+      "PwD": 0,
       "ExSM": 3
+    },
+    "upperLimitRule": "notAttained",
+    "notes": {
+      "en": "GD 2026: 18–23 as on 01-01-2026 (born 02-01-2003 to 01-01-2008). The posts are not open to PwBD. ExSM: 3 years after deducting military service. Children/dependents of 1984 riot victims get extra relaxation (UR/EWS 5, OBC 8, SC/ST 10).",
+      "hi": "GD 2026: 01-01-2026 को 18–23 (जन्म 02-01-2003 से 01-01-2008)। ये पद PwBD के लिए नहीं हैं। भूतपूर्व सैनिक: सैन्य सेवा घटाकर 3 वर्ष। 1984 दंगा पीड़ितों के बच्चों/आश्रितों को अतिरिक्त छूट (UR/EWS 5, OBC 8, SC/ST 10)।"
     }
   },
-  "sourceUrl": "https://ssc.gov.in",
+  "sourceUrl": "https://ssc.gov.in/api/attachment/uploads/masterData/NoticeBoards/notice_01122025.pdf",
   "lastVerified": "2026-10-15",
-  "verified": false,
-  "todo": [
-    "Every value in this file is a template from commonly published figures and has NOT been checked against the official notification.",
-    "Confirm cutoff date (often 1 January of the exam year)",
-    "Replace sourceUrl with the notification PDF"
-  ]
+  "verified": true
 }

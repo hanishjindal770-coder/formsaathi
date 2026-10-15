@@ -81,7 +81,7 @@ export default function DocResizer({ lang, kind, t, docName, exam, preset }: Doc
   const aspect = useMemo(() => {
     const base = resolveTargetDims(spec, kind);
     if (base.aspect !== null) return cropAspect(base, withNameDate);
-    if (exam && !custom) return DEFAULT_ASPECT[kind];
+    if (exam && !custom) return spec.aspect ?? DEFAULT_ASPECT[kind];
     return ASPECTS[settings.aspect] ?? null;
   }, [spec, kind, withNameDate, exam, custom, settings.aspect]);
 
@@ -132,7 +132,9 @@ export default function DocResizer({ lang, kind, t, docName, exam, preset }: Doc
     setBusy(true);
     setError("");
     try {
-      const target = resolveTargetDims(spec, kind, { width: crop.width, height: crop.height });
+      // Exams that give only a KB range (no pixels or cm): keep a sensible size and let it shrink to fit.
+      const noDims = !spec.widthPx && !spec.heightPx && !spec.widthCm;
+      const target = resolveTargetDims(spec, kind, { width: crop.width, height: crop.height }, noDims && exam && !custom ? 1000 : undefined);
       const bounds = hasKbTarget ? kbToByteBounds(spec.minKB, spec.maxKB) : null;
       const r = await processDocument({
         source: source.canvas,
@@ -143,7 +145,7 @@ export default function DocResizer({ lang, kind, t, docName, exam, preset }: Doc
         format: spec.format.includes("jpg") || spec.format.includes("jpeg") ? "jpeg" : "png",
         clean: isInk && clean ? { ink, threshold: threshold ?? undefined } : null,
         nameDate: withNameDate && name.trim() ? { name: name.trim().toUpperCase(), date } : null,
-        allowDownscale: !exam || custom ? !(num(settings.w) && num(settings.h)) : false,
+        allowDownscale: !exam || custom ? !(num(settings.w) && num(settings.h)) : noDims,
       });
       setResult({ ...r, url: URL.createObjectURL(r.blob) });
       requestAnimationFrame(() => resultRef.current?.scrollIntoView({ behavior: "smooth", block: "start" }));

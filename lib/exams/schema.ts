@@ -26,6 +26,8 @@ export const DocSpec = z
     widthCm: z.number().positive().optional(),
     heightCm: z.number().positive().optional(),
     dpi: z.number().int().positive().optional(),
+    /** Extension: preferred width/height ratio when only pixel ranges are given (e.g. RRB signature box 35×20 mm). */
+    aspect: z.number().positive().optional(),
     background: z.enum(["white", "light", "any"]).optional(),
     notes: Bilingual.optional(),
   })
@@ -78,6 +80,8 @@ export const ExamSpec = z
     thumb: DocSpec.optional(),
     declaration: DocSpec.optional(),
     photoWithNameDate: z.boolean().optional(),
+    /** Extension: the photo is captured live (webcam/phone) in the application, no file upload. */
+    livePhoto: z.boolean().optional(),
     combinedPhotoSign: DocSpec.optional(),
     pdfDocs: z
       .array(z.object({ label: Bilingual, minKB: z.number().positive().optional(), maxKB: z.number().positive() }).strict())

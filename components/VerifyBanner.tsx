@@ -12,6 +12,7 @@ export default function VerifyBanner({ exam, lang }: { exam: ExamSpec; lang: Lan
           {t.open} ↗
         </a>
       </p>
+      {exam.livePhoto && <p>{t.livePhoto}</p>}
       {exam.verified ? (
         <p>{fmt(t.lastVerified, { date: exam.lastVerified.split("-").reverse().join("/") })}</p>
       ) : (

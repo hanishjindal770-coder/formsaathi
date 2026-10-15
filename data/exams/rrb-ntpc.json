@@ -1,31 +1,40 @@
 {
   "slug": "rrb-ntpc",
   "name": {
-    "en": "RRB NTPC",
-    "hi": "आरआरबी एनटीपीसी"
+    "en": "RRB NTPC (Graduate)",
+    "hi": "आरआरबी एनटीपीसी (स्नातक)"
   },
   "body": "RRB",
   "category": "railway",
-  "officialSite": "https://www.rrbcdg.gov.in",
-  "photo": {
+  "officialSite": "https://rrb.indianrailways.gov.in",
+  "signature": {
     "format": [
       "jpg",
       "jpeg"
     ],
     "minKB": 30,
-    "maxKB": 70,
-    "widthCm": 3.5,
-    "heightCm": 4.5,
-    "background": "light",
+    "maxKB": 49,
+    "widthPx": {
+      "min": 140,
+      "max": 350
+    },
+    "heightPx": {
+      "min": 60,
+      "max": 200
+    },
+    "dpi": 100,
+    "aspect": 1.75,
+    "background": "white",
     "notes": {
-      "en": "Recent colour photo with a light background. The same photo is usually checked at the exam centre, so keep copies.",
-      "hi": "हल्की पृष्ठभूमि वाली हाल की रंगीन फोटो। यही फोटो परीक्षा केंद्र पर भी मिलाई जाती है, इसलिए प्रतियाँ रखें।"
+      "en": "Black ink on white paper, JPG/JPEG, 30–49 KB, at least 140×60 px at 100 DPI, to fit a 35 mm × 20 mm box. No CAPITAL, block or disjointed letters. RRB gives only a minimum size; we make it up to 350 × 200 px.",
+      "hi": "सफ़ेद कागज़ पर काली स्याही, JPG/JPEG, 30–49 KB, कम से कम 140×60 px, 100 DPI, 35 mm × 20 mm के बॉक्स में। कैपिटल, ब्लॉक या अलग-अलग अक्षरों वाला सिग्नेचर मान्य नहीं। RRB ने सिर्फ़ न्यूनतम साइज़ दिया है; हम अधिकतम 350 × 200 px बनाते हैं।"
     }
   },
+  "livePhoto": true,
   "age": {
     "min": 18,
-    "max": 36,
-    "cutoffDate": "2026-01-01",
+    "max": 33,
+    "cutoffDate": "2027-01-01",
     "relaxation": {
       "OBC": 3,
       "SC": 5,
@@ -34,19 +43,13 @@
       "PwD": 10,
       "ExSM": 3
     },
+    "upperLimitRule": "notAttained",
     "notes": {
-      "en": "Graduate-level posts. Undergraduate-level posts have a lower upper limit (usually 33).",
-      "hi": "स्नातक स्तर के पद। इंटर स्तर के पदों की अधिकतम आयु कम होती है (आमतौर पर 33)।"
+      "en": "CEN 06/2026 (Graduate): 18–33 as on 01-01-2027 (UR/EWS born 02-01-1994 to 01-01-2009). Under-graduate posts (CEN 07/2026) are 18–30 (born 02-01-1997 to 01-01-2009). ExSM: 3 years after deducting service (6 for OBC-NCL, 8 for SC/ST). PwBD: 10 (13 OBC-NCL, 15 SC/ST). EWS is treated like UR.",
+      "hi": "CEN 06/2026 (स्नातक): 01-01-2027 को 18–33 (UR/EWS जन्म 02-01-1994 से 01-01-2009)। इंटर स्तर के पद (CEN 07/2026) 18–30 (जन्म 02-01-1997 से 01-01-2009)। भूतपूर्व सैनिक: सेवा घटाकर 3 वर्ष (OBC-NCL 6, SC/ST 8)। PwBD: 10 (OBC-NCL 13, SC/ST 15)। EWS को UR जैसा माना जाता है।"
     }
   },
-  "sourceUrl": "https://www.rrbcdg.gov.in",
+  "sourceUrl": "https://rrb.indianrailways.gov.in/-/image/1791375679144CEN_06_2026_NTPC_G.pdf/examsDocuments",
   "lastVerified": "2026-10-15",
-  "verified": false,
-  "todo": [
-    "Every value in this file is a template from commonly published figures and has NOT been checked against the official notification.",
-    "Add signature spec from the CEN notice",
-    "Confirm photo KB range and pixel size",
-    "Confirm cutoff date",
-    "Replace sourceUrl with the CEN PDF"
-  ]
+  "verified": true
 }

@@ -7,21 +7,6 @@
   "body": "SSC",
   "category": "ssc",
   "officialSite": "https://ssc.gov.in",
-  "photo": {
-    "format": [
-      "jpg",
-      "jpeg"
-    ],
-    "minKB": 20,
-    "maxKB": 50,
-    "widthCm": 3.5,
-    "heightCm": 4.5,
-    "background": "white",
-    "notes": {
-      "en": "Recent colour photo, without cap or spectacles, face clearly visible. Recent SSC forms may capture the photo live through the app or webcam; check the notice.",
-      "hi": "हाल की रंगीन फोटो, बिना टोपी और चश्मे के, चेहरा साफ़ दिखे। नए SSC फॉर्म में फोटो ऐप या वेबकैम से लाइव ली जा सकती है; नोटिस देखें।"
-    }
-  },
   "signature": {
     "format": [
       "jpg",
@@ -33,10 +18,11 @@
     "heightCm": 2.0,
     "background": "white",
     "notes": {
-      "en": "Sign on white paper with a black or blue pen. Signature in capital letters is not accepted.",
-      "hi": "सफ़ेद कागज़ पर काले या नीले पेन से हस्ताक्षर करें। कैपिटल अक्षरों में हस्ताक्षर मान्य नहीं है।"
+      "en": "Scanned signature in JPEG/JPG, 10–20 KB, about 6.0 cm wide × 2.0 cm high. SSC gives no DPI; we use 100 DPI.",
+      "hi": "स्कैन किया हुआ सिग्नेचर JPEG/JPG में, 10–20 KB, लगभग 6.0 cm चौड़ा × 2.0 cm ऊँचा। SSC ने DPI नहीं दिया है; हम 100 DPI लेते हैं।"
     }
   },
+  "livePhoto": true,
   "age": {
     "min": 18,
     "max": 27,
@@ -49,17 +35,13 @@
       "PwD": 10,
       "ExSM": 3
     },
+    "upperLimitRule": "notAttained",
     "notes": {
-      "en": "MTS is 18–25 for most posts; Havaldar and some MTS posts are 18–27.",
-      "hi": "अधिकतर MTS पदों के लिए 18–25; हवलदार और कुछ MTS पदों के लिए 18–27।"
+      "en": "From the MTS & Havaldar 2025 notice (the 2026 notice was not yet out when checked). MTS: 18–25 (born 02-08-2000 to 01-08-2007). Havaldar and some MTS posts: 18–27 (born 02-08-1998 to 01-08-2007). This calculator uses 18–27. ExSM: 3 years after deducting military service from actual age. PwBD gets 10 years (13 for OBC, 15 for SC/ST). No EWS relaxation.",
+      "hi": "MTS और हवलदार 2025 अधिसूचना से (जाँच के समय 2026 की अधिसूचना नहीं आई थी)। MTS: 18–25 (जन्म 02-08-2000 से 01-08-2007)। हवलदार और कुछ MTS पद: 18–27 (जन्म 02-08-1998 से 01-08-2007)। यह कैलकुलेटर 18–27 लेता है। भूतपूर्व सैनिक: वास्तविक आयु से सैन्य सेवा घटाकर 3 वर्ष। PwBD को 10 वर्ष (OBC 13, SC/ST 15)। EWS को कोई छूट नहीं।"
     }
   },
-  "sourceUrl": "https://ssc.gov.in",
+  "sourceUrl": "https://ssc.gov.in/api/attachment/uploads/masterData/NoticeBoards/Notice_of_adv_mts_2025.pdf",
   "lastVerified": "2026-10-15",
-  "verified": false,
-  "todo": [
-    "Every value in this file is a template from commonly published figures and has NOT been checked against the official notification.",
-    "Confirm cutoff date and per-post age limits",
-    "Replace sourceUrl with the notification PDF"
-  ]
+  "verified": true
 }

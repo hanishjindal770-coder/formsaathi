@@ -14,6 +14,7 @@ const en = {
     banner: "Rules can change with every notification. Verify with the official notification before submitting.",
     open: "Open official notification",
     unverified: "These values have not yet been checked against the latest official notification. Please confirm every size and limit yourself.",
+    livePhoto: "📷 This exam captures your photo live with the camera while you fill the form, so no photo file is uploaded. Use good light, a plain white background, and no cap, mask or glasses.",
     lastVerified: "Last verified on {date}",
   },
   picker: {

@@ -13,19 +13,12 @@
       "jpeg"
     ],
     "minKB": 20,
-    "maxKB": 300,
-    "widthPx": {
-      "min": 350,
-      "max": 1000
-    },
-    "heightPx": {
-      "min": 350,
-      "max": 1000
-    },
+    "maxKB": 200,
+    "aspect": 0.78,
     "background": "white",
     "notes": {
-      "en": "Photo must be recent (taken within the last 10 days) with your name and the date of the photo printed on it. Face should cover about 3/4 of the photo.",
-      "hi": "फोटो हाल की (पिछले 10 दिन में ली गई) हो और उस पर आपका नाम और फोटो की तारीख छपी हो। चेहरा फोटो का लगभग 3/4 भाग घेरे।"
+      "en": "JPG, 20–200 KB, plain white background, face covering about 3/4 of the photo, no dark glasses or uniform. You also capture a live photo while applying. The 2026 notice does not ask for name and date on the photo and gives no pixel size.",
+      "hi": "JPG, 20–200 KB, सादा सफ़ेद बैकग्राउंड, चेहरा फोटो का लगभग 3/4 भाग, काला चश्मा या वर्दी नहीं। आवेदन के समय लाइव फोटो भी ली जाती है। 2026 की अधिसूचना में फोटो पर नाम-तारीख की ज़रूरत नहीं है और पिक्सेल साइज़ नहीं दिया गया है।"
     }
   },
   "signature": {
@@ -34,22 +27,22 @@
       "jpeg"
     ],
     "minKB": 20,
-    "maxKB": 300,
+    "maxKB": 100,
     "widthPx": {
       "min": 350,
-      "max": 1000
+      "max": 500
     },
     "heightPx": {
       "min": 350,
-      "max": 1000
+      "max": 500
     },
+    "aspect": 1,
     "background": "white",
     "notes": {
-      "en": "Sign with a black ink pen on white paper.",
-      "hi": "सफ़ेद कागज़ पर काली स्याही के पेन से हस्ताक्षर करें।"
+      "en": "Sign THREE times, one below the other, in black ink on plain white paper, and upload that as one JPG of 20–100 KB, 350–500 px.",
+      "hi": "सादे सफ़ेद कागज़ पर काली स्याही से तीन बार, एक के नीचे एक, सिग्नेचर करें और उसे एक JPG (20–100 KB, 350–500 px) के रूप में अपलोड करें।"
     }
   },
-  "photoWithNameDate": true,
   "age": {
     "min": 21,
     "max": 32,
@@ -64,17 +57,11 @@
     },
     "upperLimitRule": "notAttained",
     "notes": {
-      "en": "UPSC wording: must have attained 21 and must NOT have attained 32 on the cutoff date.",
-      "hi": "UPSC के अनुसार: कट-ऑफ तारीख पर 21 वर्ष पूरे हों और 32 वर्ष पूरे न हुए हों।"
+      "en": "CSE 2026: must have attained 21 and must not have attained 32 on 1 August 2026 (born 02-08-1994 to 01-08-2005). Relaxations add up when you fall in more than one group (e.g. OBC + PwBD). Ex-servicemen need 5 years of military service. No EWS relaxation.",
+      "hi": "CSE 2026: 1 अगस्त 2026 को 21 वर्ष पूरे हों और 32 पूरे न हुए हों (जन्म 02-08-1994 से 01-08-2005)। एक से ज़्यादा वर्ग में होने पर छूट जुड़ती है (जैसे OBC + PwBD)। भूतपूर्व सैनिक के लिए 5 वर्ष की सैन्य सेवा ज़रूरी। EWS को छूट नहीं।"
     }
   },
-  "sourceUrl": "https://upsc.gov.in",
+  "sourceUrl": "https://upsc.gov.in/examinations/active-exams",
   "lastVerified": "2026-10-15",
-  "verified": false,
-  "todo": [
-    "Every value in this file is a template from commonly published figures and has NOT been checked against the official notification.",
-    "Confirm photo/signature pixel range and KB range in the current notice",
-    "Confirm cutoff date for the exam year",
-    "Replace sourceUrl with the notification PDF"
-  ]
+  "verified": true
 }
