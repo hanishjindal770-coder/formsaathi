@@ -10,7 +10,7 @@ export type KeywordPage = {
   slug: string;
   tool: EnabledToolId;
   kind: KeywordKind;
-  preset: { maxKB?: number; widthPx?: number; heightPx?: number; to?: "jpeg" | "png"; from?: string };
+  preset: { maxKB?: number; widthPx?: number; heightPx?: number; to?: "jpeg" | "png" | "webp"; from?: string };
 };
 
 const IMAGE_KB = [10, 20, 30, 40, 50, 100, 200, 500];
@@ -20,12 +20,14 @@ const PDF_KB = [50, 100, 200, 300, 500];
 const IMAGE_PX: [number, number][] = [[200, 230], [140, 60], [240, 240], [300, 300], [600, 600], [413, 531], [800, 400]];
 
 export const KEYWORD_PAGES: KeywordPage[] = [
-  ...IMAGE_KB.map((kb) => ({ slug: `resize-image-to-${kb}kb`, tool: "photo-resize" as const, kind: "imageKb" as const, preset: { maxKB: kb } })),
+  ...IMAGE_KB.map((kb) => ({ slug: `resize-image-to-${kb}kb`, tool: "compress-image" as const, kind: "imageKb" as const, preset: { maxKB: kb } })),
   ...SIGNATURE_KB.map((kb) => ({ slug: `signature-resize-${kb}kb`, tool: "signature-resize" as const, kind: "signatureKb" as const, preset: { maxKB: kb } })),
-  ...IMAGE_PX.map(([w, h]) => ({ slug: `resize-image-to-${w}x${h}-pixels`, tool: "photo-resize" as const, kind: "imagePx" as const, preset: { widthPx: w, heightPx: h } })),
+  ...IMAGE_PX.map(([w, h]) => ({ slug: `resize-image-to-${w}x${h}-pixels`, tool: "resize-image" as const, kind: "imagePx" as const, preset: { widthPx: w, heightPx: h } })),
   ...PDF_KB.map((kb) => ({ slug: `compress-pdf-to-${kb}kb`, tool: "pdf-compress" as const, kind: "pdfKb" as const, preset: { maxKB: kb } })),
-  { slug: "jpg-to-png", tool: "image-convert", kind: "convert", preset: { from: "JPG", to: "png" } },
-  { slug: "png-to-jpg", tool: "image-convert", kind: "convert", preset: { from: "PNG", to: "jpeg" } },
+  { slug: "jpg-to-png", tool: "convert-image", kind: "convert", preset: { from: "JPG", to: "png" } },
+  { slug: "png-to-jpg", tool: "convert-image", kind: "convert", preset: { from: "PNG", to: "jpeg" } },
+  { slug: "webp-to-jpg", tool: "convert-image", kind: "convert", preset: { from: "WebP", to: "jpeg" } },
+  { slug: "jpg-to-webp", tool: "convert-image", kind: "convert", preset: { from: "JPG", to: "webp" } },
 ];
 
 export const getKeywordPage = (slug: string) => KEYWORD_PAGES.find((k) => k.slug === slug);
@@ -36,5 +38,5 @@ export const keywordVars = (k: KeywordPage) => ({
   w: k.preset.widthPx ?? "",
   h: k.preset.heightPx ?? "",
   from: k.preset.from ?? "",
-  to: k.preset.to === "png" ? "PNG" : "JPG",
+  to: k.preset.to === "png" ? "PNG" : k.preset.to === "webp" ? "WebP" : "JPG",
 });

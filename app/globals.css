@@ -126,3 +126,6 @@
 .prose-section h2 {
   @apply mt-8 mb-3 text-xl font-semibold;
 }
+
+/* Hide the default disclosure triangle on the header menu. */
+.tool-menu > summary::-webkit-details-marker { display: none; }

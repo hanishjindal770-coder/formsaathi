@@ -1,3 +1,5 @@
+import { bulkEn } from "./parts/bulk";
+import { studioEn } from "./parts/studio";
 import { typingEn } from "./parts/typing";
 import { answerKeyEn } from "./parts/answerKey";
 import { myFormsEn } from "./parts/myForms";
@@ -31,6 +33,42 @@ const en = {
     categories: { ssc: "SSC", railway: "Railway", upsc: "UPSC", banking: "Banking", state: "State", defence: "Defence", teaching: "Teaching", police: "Police", other: "Other" },
   },
   tools: {
+    "resize-image": {
+      name: "Resize image",
+      desc: "Change the size of any photo in pixels, percent, cm or inches.",
+      examTitle: "{exam} Resize image",
+      examDesc: "Change the size of any photo in pixels, percent, cm or inches.",
+    },
+    "crop-image": {
+      name: "Crop image",
+      desc: "Cut your photo to any shape: square, 4:3, 16:9, passport or free.",
+      examTitle: "{exam} Crop image",
+      examDesc: "Cut your photo to any shape: square, 4:3, 16:9, passport or free.",
+    },
+    "compress-image": {
+      name: "Compress image",
+      desc: "Make a photo smaller in KB without losing much quality.",
+      examTitle: "{exam} Compress image",
+      examDesc: "Make a photo smaller in KB without losing much quality.",
+    },
+    "convert-image": {
+      name: "Convert image",
+      desc: "Change JPG, PNG and WebP images from one format to another.",
+      examTitle: "{exam} Convert image",
+      examDesc: "Change JPG, PNG and WebP images from one format to another.",
+    },
+    "rotate-flip-image": {
+      name: "Rotate & flip image",
+      desc: "Turn a photo left or right, or mirror it.",
+      examTitle: "{exam} Rotate & flip image",
+      examDesc: "Turn a photo left or right, or mirror it.",
+    },
+    "bulk-resize": {
+      name: "Bulk resize",
+      desc: "Resize many photos at once and download them as a ZIP.",
+      examTitle: "{exam} Bulk resize",
+      examDesc: "Resize many photos at once and download them as a ZIP.",
+    },
     "photo-resize": {
       name: "Photo resizer",
       desc: "Crop, resize and compress your photo to the exact size and KB.",
@@ -264,10 +302,20 @@ const en = {
     downloadAll: "Download",
     note: "Transparent areas become white in JPG.",
   },
+  studio: studioEn,
+  bulk: bulkEn,
   typing: typingEn,
   answerKey: answerKeyEn,
   myForms: myFormsEn,
   docgen: docgenEn,
+  nav: {
+    menu: "All tools",
+    groups: { image: "Image tools", pdf: "PDF tools", documents: "Documents & planning", exam: "Exam form tools" },
+    examPresets: "Exam presets",
+    examPresetsDesc: "Photo, signature and age rules already set for 16 government exams.",
+    heroTitle: "Free image resizer",
+    heroSub: "Resize, crop, compress and convert photos right in your browser. Nothing is uploaded.",
+  },
   seo: {
     rulesHeading: "{exam} {doc} rules",
     ageRulesHeading: "{exam} age limit",

@@ -15,6 +15,8 @@ const ImagesToPdf = dynamic(() => import("./tools/ImagesToPdf"));
 const PdfMerge = dynamic(() => import("./tools/PdfMerge"));
 const PassportSheet = dynamic(() => import("./tools/PassportSheet"));
 const ImageConvert = dynamic(() => import("./tools/ImageConvert"));
+const ImageStudio = dynamic(() => import("./tools/ImageStudio"));
+const BulkResize = dynamic(() => import("./tools/BulkResize"));
 const TypingTest = dynamic(() => import("./tools/TypingTest"));
 const AnswerKey = dynamic(() => import("./tools/AnswerKey"));
 const MyForms = dynamic(() => import("./tools/MyForms"));
@@ -22,6 +24,14 @@ const Countdown = dynamic(() => import("./tools/Countdown"));
 const ResumeMaker = dynamic(() => import("./tools/ResumeMaker"));
 const BiodataMaker = dynamic(() => import("./tools/BiodataMaker"));
 const LetterMaker = dynamic(() => import("./tools/LetterMaker"));
+
+const STUDIO_TABS: Partial<Record<EnabledToolId, "resize" | "crop" | "compress" | "convert" | "rotate">> = {
+  "resize-image": "resize",
+  "crop-image": "crop",
+  "compress-image": "compress",
+  "convert-image": "convert",
+  "rotate-flip-image": "rotate",
+};
 
 /**
  * Renders the interactive tool for a page, in exam mode (exam given) or generic mode.
@@ -51,7 +61,9 @@ export default function ToolSlot({ tool, lang, exam, preset }: { tool: EnabledTo
   else if (tool === "image-to-pdf") node = <ImagesToPdf t={d.pdf} />;
   else if (tool === "pdf-merge") node = <PdfMerge t={d.pdf} />;
   else if (tool === "passport-photo-sheet") node = <PassportSheet t={d.sheet} tool={d.tool} />;
-  else if (tool === "image-convert") node = <ImageConvert t={d.convert} preset={preset} />;
+  else if (tool in STUDIO_TABS) node = <ImageStudio lang={lang} t={d.studio} initialTab={STUDIO_TABS[tool]} preset={preset} />;
+  else if (tool === "bulk-resize") node = <BulkResize lang={lang} t={d.bulk} />;
+  else if (tool === "image-convert") node = <ImageConvert t={d.convert} preset={preset?.to === "webp" ? undefined : (preset as { to?: "jpeg" | "png" })} />;
   else if (tool === "typing-test") {
     const examModes = getAllExams()
       .filter((e) => e.typing)

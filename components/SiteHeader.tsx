@@ -2,6 +2,7 @@ import Link from "next/link";
 import { getDict, type Lang } from "@/i18n";
 import { homePath } from "@/lib/routes";
 import LangToggle from "./LangToggle";
+import ToolMenu from "./ToolMenu";
 import { asset } from "@/lib/base";
 
 export default function SiteHeader({ lang }: { lang: Lang }) {
@@ -13,7 +14,10 @@ export default function SiteHeader({ lang }: { lang: Lang }) {
           <img src={asset("/icons/icon.svg")} alt="" width={28} height={28} />
           {t.site.name}
         </Link>
-        <LangToggle lang={lang} label={t.site.switchTo} aria={t.site.switchToLabel} />
+        <div className="flex items-center gap-2">
+          <ToolMenu lang={lang} />
+          <LangToggle lang={lang} label={t.site.switchTo} aria={t.site.switchToLabel} />
+        </div>
       </div>
     </header>
   );

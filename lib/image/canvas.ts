@@ -21,7 +21,11 @@ function ctx2d(c: HTMLCanvasElement) {
  * Decodes a user file into a canvas, honouring EXIF rotation and capping the working size so
  * 48 MP phone photos don't run cheap phones out of memory.
  */
-export async function loadImageFile(file: Blob, maxSide = GENERIC_MAX_SIDE * 2): Promise<Source> {
+export async function loadImageFile(
+  file: Blob,
+  maxSide = GENERIC_MAX_SIDE * 2,
+  opts: { background?: "white" | "transparent" } = {},
+): Promise<Source & { originalWidth: number; originalHeight: number }> {
   let bitmap: ImageBitmap | HTMLImageElement;
   try {
     bitmap = await createImageBitmap(file, { imageOrientation: "from-image" });
@@ -47,12 +51,47 @@ export async function loadImageFile(file: Blob, maxSide = GENERIC_MAX_SIDE * 2):
   const height = Math.max(1, Math.round(h0 * scale));
   const canvas = createCanvas(width, height);
   const ctx = ctx2d(canvas);
-  ctx.fillStyle = "#fff"; // transparent PNGs become white, not black, as JPEG
-  ctx.fillRect(0, 0, width, height);
+  if (opts.background !== "transparent") {
+    ctx.fillStyle = "#fff"; // transparent PNGs become white, not black, as JPEG
+    ctx.fillRect(0, 0, width, height);
+  }
   ctx.imageSmoothingQuality = "high";
   ctx.drawImage(bitmap, 0, 0, width, height);
   if ("close" in bitmap) bitmap.close();
+  return { canvas, width, height, originalWidth: w0, originalHeight: h0 };
+}
+
+/** Rotates clockwise by 90, 180 or 270 degrees. */
+export function rotateBy(src: Source, deg: 90 | 180 | 270): Source {
+  const swap = deg !== 180;
+  const width = swap ? src.height : src.width;
+  const height = swap ? src.width : src.height;
+  const canvas = createCanvas(width, height);
+  const ctx = ctx2d(canvas);
+  ctx.translate(width / 2, height / 2);
+  ctx.rotate((deg * Math.PI) / 180);
+  ctx.drawImage(src.canvas, -src.width / 2, -src.height / 2);
   return { canvas, width, height };
+}
+
+/** Mirrors horizontally ("h") or vertically ("v"). */
+export function flip(src: Source, dir: "h" | "v"): Source {
+  const canvas = createCanvas(src.width, src.height);
+  const ctx = ctx2d(canvas);
+  if (dir === "h") ctx.setTransform(-1, 0, 0, 1, src.width, 0);
+  else ctx.setTransform(1, 0, 0, -1, 0, src.height);
+  ctx.drawImage(src.canvas, 0, 0);
+  return { canvas, width: src.width, height: src.height };
+}
+
+/** Copy of `c` drawn over a solid colour, for JPEG output of transparent images. */
+export function flatten(c: HTMLCanvasElement, color = "#fff"): HTMLCanvasElement {
+  const out = createCanvas(c.width, c.height);
+  const ctx = ctx2d(out);
+  ctx.fillStyle = color;
+  ctx.fillRect(0, 0, c.width, c.height);
+  ctx.drawImage(c, 0, 0);
+  return out;
 }
 
 export function rotate90(src: Source): Source {
@@ -93,10 +132,19 @@ export function putPixels(c: HTMLCanvasElement, img: ImageData) {
   ctx2d(c).putImageData(img, 0, 0);
 }
 
-export async function encodeCanvas(c: HTMLCanvasElement, type: "image/jpeg" | "image/png", quality?: number): Promise<Uint8Array> {
+export async function encodeCanvas(c: HTMLCanvasElement, type: "image/jpeg" | "image/png" | "image/webp", quality?: number): Promise<Uint8Array> {
   const blob = await new Promise<Blob | null>((resolve) => c.toBlob(resolve, type, quality));
   if (!blob) throw new Error("Encoding failed");
   return new Uint8Array(await blob.arrayBuffer());
+}
+
+/** Safari < 17 silently falls back to PNG for WebP; check once before offering WebP output. */
+export function canEncodeWebp(): boolean {
+  try {
+    return createCanvas(1, 1).toDataURL("image/webp").startsWith("data:image/webp");
+  } catch {
+    return false;
+  }
 }
 
 /**

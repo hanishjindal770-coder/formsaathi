@@ -1,3 +1,5 @@
+import { bulkHi } from "./parts/bulk";
+import { studioHi } from "./parts/studio";
 import { typingHi } from "./parts/typing";
 import { answerKeyHi } from "./parts/answerKey";
 import { myFormsHi } from "./parts/myForms";
@@ -33,6 +35,42 @@ const hi: Dict = {
     categories: { ssc: "SSC", railway: "रेलवे", upsc: "UPSC", banking: "बैंकिंग", state: "राज्य", defence: "रक्षा", teaching: "शिक्षक", police: "पुलिस", other: "अन्य" },
   },
   tools: {
+    "resize-image": {
+      name: "इमेज रिसाइज़ करें",
+      desc: "किसी भी फोटो का साइज़ पिक्सल, प्रतिशत, cm या इंच में बदलें।",
+      examTitle: "{exam} इमेज रिसाइज़ करें",
+      examDesc: "किसी भी फोटो का साइज़ पिक्सल, प्रतिशत, cm या इंच में बदलें।",
+    },
+    "crop-image": {
+      name: "इमेज क्रॉप करें",
+      desc: "फोटो को किसी भी आकार में काटें: स्क्वायर, 4:3, 16:9, पासपोर्ट या फ्री।",
+      examTitle: "{exam} इमेज क्रॉप करें",
+      examDesc: "फोटो को किसी भी आकार में काटें: स्क्वायर, 4:3, 16:9, पासपोर्ट या फ्री।",
+    },
+    "compress-image": {
+      name: "इमेज कंप्रेस करें",
+      desc: "फोटो का KB कम करें, क्वालिटी ज़्यादा खराब किए बिना।",
+      examTitle: "{exam} इमेज कंप्रेस करें",
+      examDesc: "फोटो का KB कम करें, क्वालिटी ज़्यादा खराब किए बिना।",
+    },
+    "convert-image": {
+      name: "इमेज कन्वर्ट करें",
+      desc: "JPG, PNG और WebP फोटो को एक फॉर्मेट से दूसरे में बदलें।",
+      examTitle: "{exam} इमेज कन्वर्ट करें",
+      examDesc: "JPG, PNG और WebP फोटो को एक फॉर्मेट से दूसरे में बदलें।",
+    },
+    "rotate-flip-image": {
+      name: "इमेज घुमाएँ और पलटें",
+      desc: "फोटो को बाएँ या दाएँ घुमाएँ, या उल्टा (मिरर) करें।",
+      examTitle: "{exam} इमेज घुमाएँ और पलटें",
+      examDesc: "फोटो को बाएँ या दाएँ घुमाएँ, या उल्टा (मिरर) करें।",
+    },
+    "bulk-resize": {
+      name: "एक साथ कई फोटो रिसाइज़",
+      desc: "कई फोटो एक साथ रिसाइज़ करें और ZIP में डाउनलोड करें।",
+      examTitle: "{exam} एक साथ कई फोटो रिसाइज़",
+      examDesc: "कई फोटो एक साथ रिसाइज़ करें और ZIP में डाउनलोड करें।",
+    },
     "photo-resize": {
       name: "फोटो रिसाइज़र",
       desc: "फोटो को सही साइज़ और KB में क्रॉप, रिसाइज़ और कंप्रेस करें।",
@@ -266,10 +304,20 @@ const hi: Dict = {
     downloadAll: "डाउनलोड करें",
     note: "JPG में पारदर्शी हिस्सा सफ़ेद हो जाता है।",
   },
+  studio: studioHi,
+  bulk: bulkHi,
   typing: typingHi,
   answerKey: answerKeyHi,
   myForms: myFormsHi,
   docgen: docgenHi,
+  nav: {
+    menu: "सभी टूल",
+    groups: { image: "इमेज टूल", pdf: "PDF टूल", documents: "डॉक्यूमेंट और प्लानिंग", exam: "परीक्षा फॉर्म टूल" },
+    examPresets: "परीक्षा प्रीसेट",
+    examPresetsDesc: "16 सरकारी परीक्षाओं के फोटो, सिग्नेचर और आयु नियम पहले से सेट।",
+    heroTitle: "मुफ़्त इमेज रिसाइज़र",
+    heroSub: "फोटो को रिसाइज़, क्रॉप, कंप्रेस और कन्वर्ट करें, सीधे अपने ब्राउज़र में। कुछ भी अपलोड नहीं होता।",
+  },
   seo: {
     rulesHeading: "{exam} {doc} के नियम",
     ageRulesHeading: "{exam} आयु सीमा",
