@@ -1,3 +1,4 @@
+import { guidesHi } from "./parts/guides";
 import { ocrHi } from "./parts/ocr";
 import { infoHi } from "./parts/info";
 import { bulkHi } from "./parts/bulk";
@@ -326,6 +327,7 @@ const hi: Dict = {
   },
   studio: studioHi,
   ocr: ocrHi,
+  guides: guidesHi,
   info: infoHi,
   bulk: bulkHi,
   typing: typingHi,
@@ -397,6 +399,7 @@ const hi: Dict = {
         "गलत कट-ऑफ तारीख का इस्तेमाल (यह हर अधिसूचना में बदलती है)।",
       ],
     },
+    howToHeading: "इस्तेमाल कैसे करें",
     faqHeading: "अक्सर पूछे जाने वाले सवाल",
     faq: {
       docSize: { q: "{exam} के लिए {doc} का साइज़ क्या है?", a: "{doc} का नियम: {rules}।" },

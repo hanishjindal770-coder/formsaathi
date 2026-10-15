@@ -24,8 +24,8 @@ const assets = [
   ...["/icons/icon-192.png", "/icons/icon.svg", "/manifest.webmanifest"],
 ];
 // Home + every generic tool page. Exam pages are cached on first visit.
-const TOOL_PAGES = ["photo-resize", "signature-resize", "thumb-resize", "declaration-resize", "age-calculator", "pdf-compress", "image-to-pdf", "pdf-merge", "passport-photo-sheet", "image-convert"];
-const pages = ["hi", "en"].flatMap((l) => [`/${l}/`, ...TOOL_PAGES.map((t) => `/${l}/${t}/`)]);
+const TOOL_PAGES = ["resize-image", "crop-image", "compress-image", "convert-image", "bulk-resize", "photo-resize", "signature-resize", "age-calculator", "pdf-compress", "image-to-pdf", "pdf-merge", "passport-photo-sheet"];
+const pages = ["/", ...["en", "hi"].flatMap((l) => [`/${l}/`, ...TOOL_PAGES.map((t) => `/${l}/${t}/`)])];
 for (const p of pages) if (!fs.existsSync(path.join(OUT, p, "index.html"))) throw new Error(`missing page ${p}`);
 
 const precache = [...pages, ...assets].map((u) => BASE + u);
@@ -96,7 +96,7 @@ self.addEventListener("fetch", (event) => {
         const hit = (await caches.match(key)) || (await caches.match(req, { ignoreSearch: true }));
         if (hit) return hit;
         if (req.mode === "navigate") {
-          const lang = url.pathname.startsWith(BASE + "/en") ? "en" : "hi";
+          const lang = url.pathname.startsWith(BASE + "/hi") ? "hi" : "en";
           return (await caches.match(BASE + "/" + lang + "/")) || Response.error();
         }
         return Response.error();

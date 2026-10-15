@@ -17,6 +17,7 @@ import AdSlot from "@/components/AdSlot";
 import AffiliateBox from "@/components/AffiliateBox";
 import Breadcrumbs from "@/components/seo/Breadcrumbs";
 import Faq from "@/components/seo/Faq";
+import HowTo from "@/components/seo/HowTo";
 import { AgeRulesTable, DocRulesTable } from "@/components/seo/RulesTable";
 
 /**
@@ -103,6 +104,7 @@ export default async function SecondLevelPage({ params }: { params: Promise<Para
       <h1 className="mt-2 text-2xl font-semibold">{info.h1}</h1>
       <p className="mb-4 text-muted">{info.description}</p>
       <ToolSlot tool={toolId} lang={lang} preset={keyword?.preset} />
+      <HowTo heading={d.seo.howToHeading} name={info.h1} guide={d.guides[toolId]} />
       <ShareButtons lang={lang} url={url} title={info.h1} />
       <AdSlot position="inline" />
       <ExamLinks heading={d.seo.popularExams} exams={examsWithTool} lang={lang} hrefFor={(e) => examToolPath(lang, e.slug, toolId)} />
@@ -126,7 +128,7 @@ export default async function SecondLevelPage({ params }: { params: Promise<Para
           </ul>
         </section>
       )}
-      <Faq heading={d.seo.faqHeading} items={[{ q: d.seo.faq.privacy.q, a: d.seo.faq.privacy.a }]} />
+      <Faq heading={d.seo.faqHeading} items={[...d.guides[toolId].faq, { q: d.seo.faq.privacy.q, a: d.seo.faq.privacy.a }]} />
       <AdSlot position="bottom" />
     </>
   );

@@ -52,6 +52,6 @@ export function allPagePaths(): string[] {
 export function alternates(lang: Lang, pathWithoutLang: string) {
   const languages: Record<string, string> = {};
   for (const l of LOCALES) languages[l] = `${SITE_URL}/${l}/${pathWithoutLang}`;
-  languages["x-default"] = `${SITE_URL}/hi/${pathWithoutLang}`;
+  languages["x-default"] = `${SITE_URL}/en/${pathWithoutLang}`;
   return { canonical: `${SITE_URL}/${lang}/${pathWithoutLang}`, languages };
 }

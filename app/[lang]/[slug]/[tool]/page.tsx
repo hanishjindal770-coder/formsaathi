@@ -15,6 +15,7 @@ import AdSlot from "@/components/AdSlot";
 import AffiliateBox from "@/components/AffiliateBox";
 import Breadcrumbs from "@/components/seo/Breadcrumbs";
 import Faq from "@/components/seo/Faq";
+import HowTo from "@/components/seo/HowTo";
 import { AgeRulesTable, DocRulesTable } from "@/components/seo/RulesTable";
 
 /** Exam × tool × language pages, e.g. /hi/ssc-cgl/photo-resize/. Only generated when the exam has data for the tool. */
@@ -68,6 +69,7 @@ export default async function ExamToolPage({ params }: { params: Promise<Params>
       <h1 className="mt-2 text-2xl font-semibold leading-snug">{meta.title}</h1>
       <VerifyBanner exam={exam} lang={lang} />
       <ToolSlot tool={toolId} lang={lang} exam={exam} />
+      <HowTo heading={d.seo.howToHeading} name={meta.title} guide={d.guides[toolId]} intro={false} />
       <ShareButtons lang={lang} url={`${SITE_URL}/${lang}/${slug}/${toolId}/`} title={meta.title} />
       <AdSlot position="inline" />
 

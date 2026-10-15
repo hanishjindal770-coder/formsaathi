@@ -1,3 +1,4 @@
+import { guidesEn } from "./parts/guides";
 import { ocrEn } from "./parts/ocr";
 import { infoEn } from "./parts/info";
 import { bulkEn } from "./parts/bulk";
@@ -324,6 +325,7 @@ const en = {
   },
   studio: studioEn,
   ocr: ocrEn,
+  guides: guidesEn,
   info: infoEn,
   bulk: bulkEn,
   typing: typingEn,
@@ -395,6 +397,7 @@ const en = {
         "Using the wrong cutoff date (it changes with each notification).",
       ],
     },
+    howToHeading: "How to use it",
     faqHeading: "Frequently asked questions",
     faq: {
       docSize: { q: "What is the {doc} size for {exam}?", a: "{doc} rules: {rules}." },
