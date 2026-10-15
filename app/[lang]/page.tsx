@@ -8,6 +8,8 @@ import JsonLd from "@/components/seo/JsonLd";
 import { getAllExams } from "@/lib/exams/load";
 import { summarize } from "@/lib/exams/describe";
 import { KEYWORD_PAGES, keywordVars } from "@/lib/keywords";
+import { ARTICLES } from "@/lib/articles";
+import ArticleLinks from "@/components/seo/ArticleLinks";
 import { alternates, genericToolPath, SITE_URL } from "@/lib/routes";
 import { fmt } from "@/i18n";
 
@@ -48,6 +50,7 @@ export default async function Home({ params }: { params: Promise<{ lang: string 
           ))}
         </ul>
       </section>
+      <ArticleLinks lang={lang} heading={t.blog.latest} articles={ARTICLES.slice(0, 6)} />
       <JsonLd data={{ "@context": "https://schema.org", "@type": "WebApplication", name: t.site.name, url: `${SITE_URL}/${lang}/`, inLanguage: lang, applicationCategory: "MultimediaApplication", operatingSystem: "Any", offers: { "@type": "Offer", price: "0", priceCurrency: "INR" } }} />
     </>
   );

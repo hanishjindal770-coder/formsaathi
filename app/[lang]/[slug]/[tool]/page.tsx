@@ -16,6 +16,8 @@ import AffiliateBox from "@/components/AffiliateBox";
 import Breadcrumbs from "@/components/seo/Breadcrumbs";
 import Faq from "@/components/seo/Faq";
 import HowTo from "@/components/seo/HowTo";
+import ArticleLinks from "@/components/seo/ArticleLinks";
+import { articlesForTool } from "@/lib/articles";
 import { AgeRulesTable, DocRulesTable } from "@/components/seo/RulesTable";
 
 /** Exam × tool × language pages, e.g. /hi/ssc-cgl/photo-resize/. Only generated when the exam has data for the tool. */
@@ -84,6 +86,7 @@ export default async function ExamToolPage({ params }: { params: Promise<Params>
         </section>
       )}
       <Faq heading={d.seo.faqHeading} items={examToolFaq(exam, toolId, lang)} />
+      <ArticleLinks lang={lang} heading={d.blog.related} articles={articlesForTool(toolId, 2)} />
       {otherTools.length > 0 && (
         <section className="prose-section">
           <h2>{fmt(d.seo.otherTools, { exam: name })}</h2>

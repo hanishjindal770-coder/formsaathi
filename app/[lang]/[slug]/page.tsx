@@ -18,6 +18,8 @@ import AffiliateBox from "@/components/AffiliateBox";
 import Breadcrumbs from "@/components/seo/Breadcrumbs";
 import Faq from "@/components/seo/Faq";
 import HowTo from "@/components/seo/HowTo";
+import ArticleLinks from "@/components/seo/ArticleLinks";
+import { articlesForTool } from "@/lib/articles";
 import { AgeRulesTable, DocRulesTable } from "@/components/seo/RulesTable";
 
 /**
@@ -128,6 +130,7 @@ export default async function SecondLevelPage({ params }: { params: Promise<Para
           </ul>
         </section>
       )}
+      <ArticleLinks lang={lang} heading={d.blog.related} articles={articlesForTool(toolId)} />
       <Faq heading={d.seo.faqHeading} items={[...d.guides[toolId].faq, { q: d.seo.faq.privacy.q, a: d.seo.faq.privacy.a }]} />
       <AdSlot position="bottom" />
     </>

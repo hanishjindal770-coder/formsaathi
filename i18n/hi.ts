@@ -1,3 +1,4 @@
+import { blogHi } from "./parts/blog";
 import { guidesHi } from "./parts/guides";
 import { ocrHi } from "./parts/ocr";
 import { infoHi } from "./parts/info";
@@ -328,6 +329,7 @@ const hi: Dict = {
   studio: studioHi,
   ocr: ocrHi,
   guides: guidesHi,
+  blog: blogHi,
   info: infoHi,
   bulk: bulkHi,
   typing: typingHi,

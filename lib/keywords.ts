@@ -13,11 +13,11 @@ export type KeywordPage = {
   preset: { maxKB?: number; widthPx?: number; heightPx?: number; to?: "jpeg" | "png" | "webp"; from?: string };
 };
 
-const IMAGE_KB = [5, 10, 15, 20, 25, 30, 40, 50, 60, 70, 80, 100, 150, 200, 300, 500];
+const IMAGE_KB = [5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 60, 70, 80, 90, 100, 150, 200, 250, 300, 500];
 const SIGNATURE_KB = [10, 20, 30, 40, 50];
-const PDF_KB = [20, 50, 100, 150, 200, 300, 500, 1000];
+const PDF_KB = [10, 20, 30, 40, 50, 100, 150, 200, 300, 400, 500, 1000];
 /** Common form sizes: bank photo, bank signature, thumb, square, passport at 300 DPI. */
-const IMAGE_PX: [number, number][] = [[200, 230], [140, 60], [240, 240], [300, 300], [600, 600], [413, 531], [800, 400], [100, 100], [200, 200], [500, 500], [1080, 1080], [1080, 1350], [1280, 720], [1920, 1080], [350, 450]];
+const IMAGE_PX: [number, number][] = [[200, 230], [140, 60], [240, 240], [300, 300], [600, 600], [413, 531], [800, 400], [100, 100], [200, 200], [500, 500], [1080, 1080], [1080, 1350], [1280, 720], [1920, 1080], [350, 450], [150, 150], [400, 400], [1200, 630]];
 
 export const KEYWORD_PAGES: KeywordPage[] = [
   ...IMAGE_KB.map((kb) => ({ slug: `resize-image-to-${kb}kb`, tool: "compress-image" as const, kind: "imageKb" as const, preset: { maxKB: kb } })),

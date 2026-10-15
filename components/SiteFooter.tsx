@@ -17,6 +17,7 @@ export default function SiteFooter({ lang }: { lang: Lang }) {
           ))}
         </nav>
         <nav className="flex flex-wrap gap-x-4 gap-y-1">
+          <Link href={`/${lang}/blog/`} className="py-2">{t.blog.link}</Link>
           {(["about", "privacy", "contact"] as const).map((k) => (
             <Link key={k} href={`/${lang}/${k}/`} className="py-2">{t.info.links[k]}</Link>
           ))}

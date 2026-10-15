@@ -1,3 +1,4 @@
+import { blogEn } from "./parts/blog";
 import { guidesEn } from "./parts/guides";
 import { ocrEn } from "./parts/ocr";
 import { infoEn } from "./parts/info";
@@ -326,6 +327,7 @@ const en = {
   studio: studioEn,
   ocr: ocrEn,
   guides: guidesEn,
+  blog: blogEn,
   info: infoEn,
   bulk: bulkEn,
   typing: typingEn,

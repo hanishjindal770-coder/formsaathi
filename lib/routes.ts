@@ -2,6 +2,7 @@ import type { Lang } from "@/i18n/config";
 import { LOCALES } from "@/i18n/config";
 import { getAllExams, getExam } from "@/lib/exams/load";
 import { KEYWORD_PAGES, getKeywordPage } from "@/lib/keywords";
+import { ARTICLES } from "@/lib/articles";
 import { enabledTools, getTool, toolsForExam } from "@/lib/tools/registry";
 
 /**
@@ -46,7 +47,7 @@ export function examToolParams(): { exam: string; tool: string }[] {
 
 /** Every page path without the language prefix, e.g. "ssc-cgl/photo-resize/". */
 export function allPagePaths(): string[] {
-  return ["", "about/", "privacy/", "contact/", ...secondSegmentSlugs().map((s) => `${s}/`), ...examToolParams().map((p) => `${p.exam}/${p.tool}/`)];
+  return ["", "about/", "privacy/", "contact/", "blog/", ...ARTICLES.map((a) => `blog/${a.slug}/`), ...secondSegmentSlugs().map((s) => `${s}/`), ...examToolParams().map((p) => `${p.exam}/${p.tool}/`)];
 }
 
 export function alternates(lang: Lang, pathWithoutLang: string) {
