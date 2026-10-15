@@ -8,31 +8,30 @@
   "state": "Bihar",
   "category": "state",
   "officialSite": "https://bpsc.bihar.gov.in",
+  "livePhoto": true,
   "age": {
-    "min": 21,
+    "min": 20,
     "max": 37,
-    "cutoffDate": "2025-08-01",
+    "cutoffDate": "2026-08-01",
     "relaxation": {
       "OBC": 3,
       "SC": 5,
       "ST": 5,
       "EWS": 0,
       "PwD": 10,
-      "ExSM": 0
+      "ExSM": 3
     },
     "notes": {
-      "en": "Bihar limits depend on gender and category (e.g. women and BC/EBC up to 40, SC/ST up to 42). Minimum age differs by post.",
-      "hi": "बिहार में आयु सीमा लिंग और वर्ग पर निर्भर है (जैसे महिलाएँ और BC/EBC 40 तक, SC/ST 42 तक)। न्यूनतम आयु पद के अनुसार अलग है।"
+      "en": "72nd CCE (2026), as on 01-08-2026: maximum 37 for UR men, 40 for UR women and BC/EBC, 42 for SC/ST. Minimum is 20, 21 or 22 depending on the post. PwBD +10 on top. Reserved limits apply to Bihar residents only. The photo is captured live on the BPSC portal.",
+      "hi": "72वीं CCE (2026), 01-08-2026 को: अधिकतम आयु अनारक्षित पुरुष 37, अनारक्षित महिला और BC/EBC 40, SC/ST 42। न्यूनतम आयु पद के अनुसार 20, 21 या 22। दिव्यांग +10 अतिरिक्त। आरक्षित सीमा केवल बिहार के मूल निवासियों के लिए। फोटो BPSC पोर्टल पर लाइव ली जाती है।"
     }
   },
-  "sourceUrl": "https://bpsc.bihar.gov.in",
+  "sourceUrl": "https://bpsc.bihar.gov.in/wp-content/uploads/BPSC_content/Notices/Advertisement-Integrated-72th-CCE-PT_BPSC-20260505-p1euvo.pdf",
   "lastVerified": "2026-10-15",
   "verified": false,
   "todo": [
-    "Every value in this file is a template from commonly published figures and has NOT been checked against the official notification.",
-    "Model gender-based limits (schema may need a female relaxation key)",
-    "Add photo and signature specs",
-    "Confirm cutoff date",
-    "Replace sourceUrl with the advertisement PDF"
+    "Age figures come from consistent third-party reports of the 72nd CCE advertisement; the official PDF is a scanned image that could not be read. Confirm against it.",
+    "Signature: BPSC user manual (bpsconline.bihar.gov.in/downloads/User_Manual.pdf) says Hindi and English signatures, under 20 KB, 'width 150–220, height 250–320' px; the width/height pairing looks swapped, so no signature spec is published yet.",
+    "Live photo confirmed from the official BPSC user manual."
   ]
 }

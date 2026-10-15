@@ -11,27 +11,26 @@
   "age": {
     "min": 18,
     "max": 42,
-    "cutoffDate": "2025-01-01",
+    "cutoffDate": "2025-06-12",
     "relaxation": {
       "OBC": 5,
       "SC": 5,
       "ST": 0,
       "EWS": 0,
       "PwD": 10,
-      "ExSM": 0
+      "ExSM": 3
     },
+    "upperLimitRule": "notExceeding",
     "notes": {
-      "en": "Haryana: relaxation for SC/BC of Haryana domicile only.",
-      "hi": "हरियाणा: छूट केवल हरियाणा के मूल निवासी SC/BC के लिए।"
+      "en": "CET Group C, Advt 01/2025: 18–42 as on 12-06-2025 (closing date). SC and BC-A/BC-B: 5 years; reservation benefits are for Haryana residents only. PwD: 10 years, plus 5 more for SC/BC/EWS PwD. Ex-servicemen: military service plus 3 years. Widowed, divorced, judicially separated or unmarried women: 5 years. No one except ex-servicemen may go above 52. Each recruitment post later sets its own age limit.",
+      "hi": "CET ग्रुप C, विज्ञापन 01/2025: 12-06-2025 (अंतिम तिथि) को 18–42 वर्ष। SC और BC-A/BC-B: 5 वर्ष; आरक्षण लाभ केवल हरियाणा निवासियों को। दिव्यांग: 10 वर्ष, SC/BC/EWS दिव्यांग को 5 वर्ष और। भूतपूर्व सैनिक: सैन्य सेवा + 3 वर्ष। विधवा, तलाकशुदा, न्यायिक रूप से अलग या अविवाहित महिलाएँ: 5 वर्ष। भूतपूर्व सैनिक छोड़कर अधिकतम 52 वर्ष। बाद की भर्ती में हर पद की अपनी आयु सीमा होती है।"
     }
   },
-  "sourceUrl": "https://hssc.gov.in",
+  "sourceUrl": "https://hssc.gov.in/cet_c/CET-012025.pdf",
   "lastVerified": "2026-10-15",
-  "verified": false,
+  "verified": true,
   "todo": [
-    "Every value in this file is a template from commonly published figures and has NOT been checked against the official notification.",
-    "Confirm age limits and relaxations",
-    "Add photo and signature specs",
-    "Replace sourceUrl with the advertisement PDF"
+    "Photo/signature specs are set on onetimeregn.haryana.gov.in, not in the advertisement; add them once readable.",
+    "Women's 5-year relaxation and the 52-year cap live in notes only."
   ]
 }

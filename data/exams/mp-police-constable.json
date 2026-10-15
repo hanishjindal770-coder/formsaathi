@@ -11,27 +11,26 @@
   "age": {
     "min": 18,
     "max": 33,
-    "cutoffDate": "2026-01-01",
+    "cutoffDate": "2025-09-29",
     "relaxation": {
       "OBC": 5,
       "SC": 5,
       "ST": 5,
-      "EWS": 5,
+      "EWS": 0,
       "PwD": 0,
-      "ExSM": 0
+      "ExSM": 3
     },
     "notes": {
-      "en": "Limits differ for men and women and for MP domicile candidates.",
-      "hi": "पुरुष, महिला और मध्य प्रदेश के मूल निवासियों के लिए सीमा अलग है।"
+      "en": "Constable 2025: 18–33 as on 29-09-2025 for MP men (UR/EWS) and all non-MP candidates. MP-domicile women of every category, MP SC/ST/OBC men, and MP government employees/Home Guards: up to 38. MP women with inter-caste marriage or gallantry award: up to 43. Non-MP candidates get no relaxation and can apply only for unreserved posts. Ex-servicemen: service deducted, at most 3 years over the limit. No PwD relaxation (police posts are exempt).",
+      "hi": "आरक्षक 2025: 29-09-2025 को 18–33 वर्ष, म.प्र. के पुरुष (अनारक्षित/EWS) और सभी अन्य राज्य के उम्मीदवारों के लिए। म.प्र. मूल निवासी सभी वर्ग की महिलाएँ, म.प्र. के SC/ST/OBC पुरुष और शासकीय कर्मचारी/नगर सैनिक: 38 वर्ष तक। अंतरजातीय विवाह या वीरता पुरस्कार वाली म.प्र. महिलाएँ: 43 तक। अन्य राज्य के उम्मीदवारों को कोई छूट नहीं, केवल अनारक्षित पद। भूतपूर्व सैनिक: सेवा अवधि घटाकर अधिकतम 3 वर्ष अधिक। दिव्यांग छूट नहीं (पुलिस पद मुक्त हैं)।"
     }
   },
-  "sourceUrl": "https://esb.mp.gov.in",
+  "sourceUrl": "https://www.resultbharat.com/NOTICE/MPESB-Constable_2025_Rulebook.pdf",
   "lastVerified": "2026-10-15",
-  "verified": false,
+  "verified": true,
   "todo": [
-    "Every value in this file is a template from commonly published figures and has NOT been checked against the official notification.",
-    "Confirm all age values; PwD/ExSM set to 0 as unknown",
-    "Add photo and signature specs",
-    "Replace sourceUrl with the rule book PDF"
+    "Age rules read from a hosted copy of the official MPESB Constable 2025 rulebook (esb.mp.gov.in was unreachable). Swap sourceUrl for the esb.mp.gov.in PDF.",
+    "Women (38) and other gender/domicile limits are in notes only; the schema has no gender key.",
+    "Rulebook gives no photo/signature specs; these are on the MP Online form."
   ]
 }

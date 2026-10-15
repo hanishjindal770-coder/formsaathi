@@ -11,7 +11,7 @@
   "age": {
     "min": 18,
     "max": 40,
-    "cutoffDate": "2025-07-01",
+    "cutoffDate": "2026-07-01",
     "relaxation": {
       "OBC": 5,
       "SC": 5,
@@ -21,17 +21,17 @@
       "ExSM": 3
     },
     "notes": {
-      "en": "Relaxation applies only to Uttar Pradesh domicile candidates.",
-      "hi": "छूट केवल उत्तर प्रदेश के मूल निवासियों के लिए है।"
+      "en": "PET 2026 (Advt 16-Exam/2026): 18–40 as on 01-07-2026. Reserved-category relaxation follows UP government rules and applies to UP residents. PwD 15 years; ex-servicemen 3 years after deducting service; UP government employees and classified sportspersons 5 years.",
+      "hi": "PET 2026 (विज्ञापन 16-परीक्षा/2026): 01-07-2026 को 18–40 वर्ष। आरक्षित वर्ग की छूट उत्तर प्रदेश शासन के नियमों के अनुसार, उत्तर प्रदेश के मूल निवासियों के लिए। दिव्यांग 15 वर्ष; भूतपूर्व सैनिक सेवा घटाकर 3 वर्ष; उ.प्र. सरकारी कर्मचारी और वर्गीकृत खिलाड़ी 5 वर्ष।"
     }
   },
   "sourceUrl": "https://upsssc.gov.in",
   "lastVerified": "2026-10-15",
   "verified": false,
   "todo": [
-    "Every value in this file is a template from commonly published figures and has NOT been checked against the official notification.",
-    "Add photo and signature specs from the advertisement",
-    "Confirm cutoff date and ExSM relaxation",
+    "PET 2026 figures come from consistent third-party reports; the official advertisement (scanned) and upsssc.gov.in were unreachable. Confirm against the PDF.",
+    "Category relaxation years (5) and the domicile clause are not confirmed; the notice reportedly just cites state rules.",
+    "Photo/signature are uploaded at UPSSSC OTR; third-party figures conflict (photo 50–100 KB 3.5×4.5 cm; signature 20–50 or 30–50 KB). Check upsssc.gov.in/GuidLineUploadPhoto.htm.",
     "Replace sourceUrl with the advertisement PDF"
   ]
 }

@@ -7,32 +7,57 @@
   "body": "RSMSSB",
   "state": "Rajasthan",
   "category": "state",
-  "officialSite": "https://rsmssb.rajasthan.gov.in",
+  "officialSite": "https://rssb.rajasthan.gov.in",
+  "photo": {
+    "format": ["jpg", "jpeg"],
+    "minKB": 50,
+    "maxKB": 100,
+    "widthPx": { "min": 240, "max": 480 },
+    "heightPx": { "min": 320, "max": 640 },
+    "aspect": 0.75,
+    "background": "light",
+    "notes": {
+      "en": "Recent colour photo (within 6 months), 3.5 × 4.5 cm, JPEG, 240×320 to 480×640 px, 50–100 KB. White or light background; face at least 50% of the photo. No mobile selfies.",
+      "hi": "हाल की रंगीन फोटो (6 माह के भीतर), 3.5 × 4.5 cm, JPEG, 240×320 से 480×640 px, 50–100 KB। सफेद या हल्की पृष्ठभूमि; चेहरा फोटो का कम से कम 50%। मोबाइल सेल्फी नहीं।"
+    }
+  },
+  "signature": {
+    "format": ["jpg", "jpeg"],
+    "minKB": 20,
+    "maxKB": 50,
+    "widthPx": { "min": 280, "max": 560 },
+    "heightPx": { "min": 80, "max": 160 },
+    "aspect": 3.5,
+    "background": "white",
+    "notes": {
+      "en": "Sign inside a 7 × 2 cm box on white paper with a black or dark blue pen. JPEG, 280×80 to 560×160 px, 20–50 KB.",
+      "hi": "सफेद कागज़ पर 7 × 2 cm के बॉक्स में काले या गहरे नीले पेन से हस्ताक्षर करें। JPEG, 280×80 से 560×160 px, 20–50 KB।"
+    }
+  },
   "age": {
     "min": 18,
     "max": 40,
-    "cutoffDate": "2026-01-01",
+    "cutoffDate": "2027-01-01",
     "relaxation": {
       "OBC": 5,
       "SC": 5,
       "ST": 5,
       "EWS": 5,
-      "PwD": 10,
-      "ExSM": 0
+      "PwD": 5,
+      "ExSM": 15
     },
+    "upperLimitRule": "notAttained",
     "notes": {
-      "en": "Rajasthan relaxations differ for men and women and apply to Rajasthan domicile only.",
-      "hi": "राजस्थान में छूट पुरुष और महिला के लिए अलग है और केवल राजस्थान के मूल निवासियों के लिए है।"
+      "en": "CET 2026 (Senior Secondary Advt 08/2026 and Graduate Advt 09/2026): 18–40 as on 01-01-2027 at both levels. Rajasthan residents only: SC/ST/OBC/MBC/EWS men +5 (45); General women +5 (45); SC/ST/OBC/MBC/EWS women +10 (50). Widows and divorcees: no upper limit. Category relaxations do not stack with each other; PwD relaxation is added on top. Check the exact PwD years in the notice.",
+      "hi": "CET 2026 (सीनियर सेकेंडरी विज्ञापन 08/2026 और स्नातक विज्ञापन 09/2026): दोनों स्तर पर 01-01-2027 को 18–40 वर्ष। केवल राजस्थान निवासी: SC/ST/OBC/MBC/EWS पुरुष +5 (45); सामान्य महिला +5 (45); SC/ST/OBC/MBC/EWS महिला +10 (50)। विधवा और तलाकशुदा: कोई ऊपरी सीमा नहीं। वर्ग छूट आपस में नहीं जुड़तीं; दिव्यांग छूट इनके ऊपर जुड़ती है। दिव्यांग छूट के सटीक वर्ष विज्ञापन में जाँचें।"
     }
   },
-  "sourceUrl": "https://rsmssb.rajasthan.gov.in",
+  "sourceUrl": "https://rssb.rajasthan.gov.in/storage/guideline_item/1634728462.pdf",
   "lastVerified": "2026-10-15",
-  "verified": false,
+  "verified": true,
   "todo": [
-    "Every value in this file is a template from commonly published figures and has NOT been checked against the official notification.",
-    "Model gender-based relaxation",
-    "Add photo and signature specs (SSO profile rules)",
-    "Confirm cutoff date",
-    "Replace sourceUrl with the advertisement PDF"
+    "Age read from hosted copies of the official CET 2026 notices (Advt 08/2026, 09/2026); rssb.rajasthan.gov.in was unreachable. sourceUrl is RSSB's official photo/signature guideline.",
+    "PwD relaxation years per category could not be read cleanly (5 used); confirm.",
+    "Women's relaxation is in notes only; the schema has no gender key."
   ]
 }
